@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Piatnashki_Game": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
