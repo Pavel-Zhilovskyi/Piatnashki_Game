@@ -12,3 +12,4 @@ C:\Users\pasha\OneDrive\Desktop\C#\Piatnashki_Game\Piatnashki_Game\obj\Debug\net
 C:\Users\pasha\OneDrive\Desktop\C#\Piatnashki_Game\Piatnashki_Game\obj\Debug\net10.0\Piatnashki_Game.pdb
 C:\Users\pasha\OneDrive\Desktop\C#\Piatnashki_Game\Piatnashki_Game\obj\Debug\net10.0\Piatnashki_Game.genruntimeconfig.cache
 C:\Users\pasha\OneDrive\Desktop\C#\Piatnashki_Game\Piatnashki_Game\obj\Debug\net10.0\ref\Piatnashki_Game.dll
+C:\Users\pasha\OneDrive\Desktop\C#\Piatnashki_Game\Piatnashki_Game\obj\Debug\net10.0\Piatnashki_Game.sourcelink.json

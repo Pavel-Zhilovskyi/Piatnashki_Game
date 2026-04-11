@@ -4,13 +4,26 @@
     {
         static public int ReadTileNumber()
         {
-            Console.Write("Введите номер фишки: ");
+            Console.Write("Enter the tile number: ");
             
             int number;
 
             while(!int.TryParse(Console.ReadLine(), out number) || number < 1 || number > 15)
             {
-                Console.WriteLine("Введите коректный номер фишки.");
+                Console.WriteLine("Enter a valid tile number!");
+            }
+
+            return number;
+        }
+
+        static public int ReadMenuInput()
+        {
+            Console.Write("Your choice: ");
+            int number;
+
+            while (!int.TryParse(Console.ReadLine(), out number) || number < 1 || number > 3)
+            {
+                Console.WriteLine("Enter a valid menu option!");
             }
 
             return number;

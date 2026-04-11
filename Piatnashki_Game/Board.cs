@@ -2,8 +2,13 @@
 {
     internal class Board
     {
+        private readonly int[,] solvedBoardExample = {{1,2,3,4},
+                                                     {5,6,7,8},
+                                                     {9,10,11,12},
+                                                     {13,14,15,0}};
         private const int rows = 4;
         private const int cols = 4;
+
         private int[,] board;
 
         private int emptyRow;
@@ -19,7 +24,7 @@
             do
             {
                 Random.Shared.Shuffle(tempArr);
-            } while (!IsSolvable(tempArr));
+            } while (!IsSolvable(tempArr) || IsSolved(tempArr));
 
 
             board = new int[rows, cols];
@@ -149,28 +154,31 @@
             return false;
         }
 
+        private bool IsSolved(int[] tempArr)
+        {
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < cols; j++)
+                {
+                    if (tempArr[i * cols + j] != solvedBoardExample[i, j])
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
         public bool IsSolved()
         {
-            int temp = 0;
-
-            if (board[0, 0] != 1 || board[3, 3] != 0)
-            {
-                return false;
-            }
-
             for (int i = 0; i < rows; ++i)
             {
                 for (int j = 0; j < cols; ++j)
                 {
-                    if(i == 3 && j == 3)
-                    {
-                        return true;
-                    }
-                    if(board[i, j] - temp != 1)
+                    if (board[i, j] != solvedBoardExample[i, j])
                     {
                         return false;
                     }
-                    temp = board[i, j];
                 }
             }
             return true;
