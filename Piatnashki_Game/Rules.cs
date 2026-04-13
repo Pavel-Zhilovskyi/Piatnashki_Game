@@ -22,11 +22,14 @@
         public void ShowRules()
         {
             int count = 1;
+            Console.Write("\n");
             foreach(string rule in rules)
             {
                 Console.WriteLine(count + ". " + rule);
                 count++;
+                Thread.Sleep(300);
             }
+            Console.Write("\n");
         }
     }
 }

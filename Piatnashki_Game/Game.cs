@@ -4,38 +4,75 @@
     {
         public void Menu()
         {
-            int choice;
+            FifteenPuzzleMenu choice;
             do
             {
-                Console.WriteLine("Fifteen Puzzle");
+                Console.WriteLine("Fifteen Puzzle\n");
                 Console.WriteLine("1 - Play.");
                 Console.WriteLine("2 - See rules.");
                 Console.WriteLine("3 - Exit.");
 
-                choice = InputHandler.ReadMenuInput();
+                choice = (FifteenPuzzleMenu)InputHandler.ReadMenuInput();
 
                 switch (choice)
                 {
-                    case 1:
-                    //todo place Play here
+                    case FifteenPuzzleMenu.Play:
+                        Run();
+                        break;
 
-                    case 2:
+                    case FifteenPuzzleMenu.SeeRules:
                         Rules rules = new Rules();
                         rules.ShowRules();
                         break;
 
-                    case 3:
-                        Console.Write("Bye!");
+                    case FifteenPuzzleMenu.Exit:
+                        Console.Write("\nBYE!");
                         Environment.Exit(0);
                         break;
                 }
-            } while (choice != 3);
+            } while (choice != FifteenPuzzleMenu.Exit);
         }
 
-        public void Play()
+        public void Run()
         {
             Board board = new Board();
+            FifteenPuzzleRun choice;
+            Console.Clear();
 
+            do
+            {
+                board.ShowBoard();
+
+                Console.WriteLine("1 - Move the tile.");
+                Console.WriteLine("2 - Give up.");
+
+                choice = (FifteenPuzzleRun)InputHandler.ReadRunInput();
+
+                switch (choice)
+                {
+                    case FifteenPuzzleRun.MoveTile:
+                        int tile = InputHandler.ReadTileNumber();
+
+                        if (board.MoveTile(tile))
+                        {
+                            Console.WriteLine("The tile was successfully moved.");
+                            
+                            if (board.IsSolved())
+                            {
+                                Console.WriteLine("You have successfully completed the board!");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nUnable to move the tile!(Read rules for more info.)");
+                        }
+                        break;
+                    case FifteenPuzzleRun.GiveUp:
+                        Console.WriteLine("\nYou decided to give up.\n");
+                        return;
+                }
+            } while (choice != FifteenPuzzleRun.GiveUp);
         }
     }
 }

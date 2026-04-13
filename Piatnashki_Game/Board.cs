@@ -1,4 +1,6 @@
-﻿namespace Piatnashki_Game
+﻿using System.Runtime.CompilerServices;
+
+namespace Piatnashki_Game
 {
     internal class Board
     {
@@ -73,6 +75,7 @@
 
         public void ShowBoard()
         {
+            Console.Write("\n");
             for (int i = 0; i < rows; i++)
             {
                 for (int j = 0; j < cols; j++)
@@ -92,6 +95,7 @@
                 }
                 Console.Write("\n");
             }
+            Console.Write("\n");
         }
 
         private void FindEmptyTile()
@@ -111,7 +115,7 @@
             }
         }
 
-        private void FindTile(int tileValue)
+        private bool FindTile(int tileValue)
         {
             for (int i = 0; i < rows; ++i)
             {
@@ -121,10 +125,11 @@
                     {
                         tileToMoveRow = i;
                         tileToMoveCol = j;
-                        return;
+                        return true;
                     }
                 }
             }
+            return false;
         }
 
         private bool CanMove(int tileRow, int tileCol)
@@ -141,7 +146,10 @@
 
         public bool MoveTile(int tileValue)
         {
-            FindTile(tileValue);
+            if (!FindTile(tileValue))
+            {
+                return false;
+            }
 
             if (CanMove(tileToMoveRow, tileToMoveCol))
             {
