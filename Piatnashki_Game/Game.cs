@@ -21,8 +21,7 @@
                         break;
 
                     case FifteenPuzzleMenu.SeeRules:
-                        Rules rules = new Rules();
-                        rules.ShowRules();
+                        Rules.ShowRules();
                         break;
 
                     case FifteenPuzzleMenu.Exit:

@@ -2,11 +2,7 @@
 {
     internal class Rules
     {
-        private readonly string[] rules;
-
-        public Rules()
-        {
-            rules = new string[] { "The game board consists of a 4x4 grid.",
+        private static readonly string[] rules = new string[] { "The game board consists of a 4x4 grid.",
                     "The board contains 15 numbered tiles and one empty space.",
                     "At the start of the game, the tiles are placed in random order.",
                     "The player can move only a tile that is adjacent to the empty space.",
@@ -17,9 +13,8 @@
                     "The correct order is formed from left to right and from top to bottom.",
                     "The empty space must be in the bottom-right corner.",
                     "The game ends when all tiles are arranged in the correct order."};
-        }
 
-        public void ShowRules()
+        public static void ShowRules()
         {
             int count = 1;
             Console.Write("\n");
