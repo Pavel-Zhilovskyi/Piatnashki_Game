@@ -4,10 +4,10 @@ namespace Piatnashki_Game
 {
     internal class Board
     {
-        private readonly int[,] solvedBoardExample = {{1,2,3,4},
-                                                     {5,6,7,8},
-                                                     {9,10,11,12},
-                                                     {13,14,15,0}};
+        private readonly int[,] solvedBoard = {{1,2,3,4},
+                                               {5,6,7,8},
+                                              {9,10,11,12},
+                                              {13,14,15,0}};
         private const int rows = 4;
         private const int cols = 4;
 
@@ -15,9 +15,6 @@ namespace Piatnashki_Game
 
         private int emptyRow;
         private int emptyCol;
-
-        private int tileToMoveRow;
-        private int tileToMoveCol;
 
         public Board()
         {
@@ -115,7 +112,7 @@ namespace Piatnashki_Game
             }
         }
 
-        private bool FindTile(int tileValue)
+        private bool FindTile(int tileValue, out int row, out int col)
         {
             for (int i = 0; i < rows; ++i)
             {
@@ -123,12 +120,15 @@ namespace Piatnashki_Game
                 {
                     if (board[i, j] == tileValue)
                     {
-                        tileToMoveRow = i;
-                        tileToMoveCol = j;
+                        row = i;
+                        col = j;
                         return true;
                     }
                 }
             }
+
+            row = -1;
+            col = -1;
             return false;
         }
 
@@ -146,15 +146,15 @@ namespace Piatnashki_Game
 
         public bool MoveTile(int tileValue)
         {
-            if (!FindTile(tileValue))
+            if (!FindTile(tileValue, out int row, out int col))
             {
                 return false;
             }
 
-            if (CanMove(tileToMoveRow, tileToMoveCol))
+            if (CanMove(row, col))
             {
-                (board[tileToMoveRow, tileToMoveCol], board[emptyRow, emptyCol]) =
-                    (board[emptyRow, emptyCol], board[tileToMoveRow, tileToMoveCol]);
+                (board[row, col], board[emptyRow, emptyCol]) =
+                    (board[emptyRow, emptyCol], board[row, col]);
 
                 FindEmptyTile();
                 return true;
@@ -168,7 +168,7 @@ namespace Piatnashki_Game
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    if (tempArr[i * cols + j] != solvedBoardExample[i, j])
+                    if (tempArr[i * cols + j] != solvedBoard[i, j])
                     {
                         return false;
                     }
@@ -183,7 +183,7 @@ namespace Piatnashki_Game
             {
                 for (int j = 0; j < cols; ++j)
                 {
-                    if (board[i, j] != solvedBoardExample[i, j])
+                    if (board[i, j] != solvedBoard[i, j])
                     {
                         return false;
                     }

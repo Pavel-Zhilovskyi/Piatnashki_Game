@@ -12,7 +12,7 @@
                 Console.WriteLine("2 - See rules.");
                 Console.WriteLine("3 - Exit.");
 
-                choice = (FifteenPuzzleMenu)InputHandler.ReadMenuInput();
+                choice = (FifteenPuzzleMenu)InputHandler.ReadGameOptionInput(1, 3);
 
                 switch (choice)
                 {
@@ -26,7 +26,6 @@
 
                     case FifteenPuzzleMenu.Exit:
                         Console.Write("\nBYE!");
-                        Environment.Exit(0);
                         break;
                 }
             } while (choice != FifteenPuzzleMenu.Exit);
@@ -45,7 +44,7 @@
                 Console.WriteLine("1 - Move the tile.");
                 Console.WriteLine("2 - Give up.");
 
-                choice = (FifteenPuzzleRun)InputHandler.ReadRunInput();
+                choice = (FifteenPuzzleRun)InputHandler.ReadGameOptionInput(1, 2);
 
                 switch (choice)
                 {
