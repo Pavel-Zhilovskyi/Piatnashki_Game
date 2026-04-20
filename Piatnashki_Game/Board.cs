@@ -155,29 +155,42 @@
             return false;
         }
 
-        private bool CanMove(int tileRow, int tileCol)
+        private bool CanMove(ConsoleKeyInfo keyInfo)
         {
-            if ((tileRow - 1 == emptyRow && emptyCol == tileCol)
-                || (tileRow + 1 == emptyRow && emptyCol == tileCol)
-                    || (tileCol - 1 == emptyCol && emptyRow == tileRow)
-                        || (tileCol + 1 == emptyCol && emptyRow == tileRow))
+            if ((keyInfo.Key == ConsoleKey.W && emptyRow > 0 && emptyRow <= rows) ||
+                (keyInfo.Key == ConsoleKey.S && emptyRow >= 0 && emptyRow < rows - 1) ||
+                (keyInfo.Key == ConsoleKey.A && emptyCol > 0 && emptyCol <= cols) ||
+                (keyInfo.Key == ConsoleKey.D && emptyCol >= 0 && emptyCol < cols - 1))
             {
                 return true;
             }
             return false;
         }
 
-        public bool MoveTile(int tileValue)
+        public bool MoveTile(ConsoleKeyInfo keyInfo)
         {
-            if (!FindTile(tileValue, out int row, out int col))
+            if (CanMove(keyInfo))
             {
-                return false;
-            }
-
-            if (CanMove(row, col))
-            {
-                (board[row, col], board[emptyRow, emptyCol]) =
-                    (board[emptyRow, emptyCol], board[row, col]);
+                if (keyInfo.Key == ConsoleKey.W)
+                {
+                    (board[emptyRow, emptyCol], board[emptyRow - 1, emptyCol]) =
+                        (board[emptyRow - 1, emptyCol], board[emptyRow, emptyCol]);
+                }
+                else if (keyInfo.Key == ConsoleKey.S)
+                {
+                    (board[emptyRow, emptyCol], board[emptyRow + 1, emptyCol]) =
+                        (board[emptyRow + 1, emptyCol], board[emptyRow, emptyCol]);
+                }
+                else if (keyInfo.Key == ConsoleKey.A)
+                {
+                    (board[emptyRow, emptyCol], board[emptyRow, emptyCol - 1]) =
+                        (board[emptyRow, emptyCol - 1], board[emptyRow, emptyCol]);
+                }
+                else if (keyInfo.Key == ConsoleKey.D)
+                {
+                    (board[emptyRow, emptyCol], board[emptyRow, emptyCol + 1]) =
+                        (board[emptyRow, emptyCol + 1], board[emptyRow, emptyCol]);
+                }
 
                 FindEmptyTile();
                 return true;
