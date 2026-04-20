@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace Piatnashki_Game
+﻿namespace Piatnashki_Game
 {
     internal class Board
     {
@@ -8,18 +6,34 @@ namespace Piatnashki_Game
                                                {5,6,7,8},
                                               {9,10,11,12},
                                               {13,14,15,0}};
-        private const int rows = 4;
-        private const int cols = 4;
+        private int rows;
+        private int cols;
 
         private int[,] board;
 
         private int emptyRow;
         private int emptyCol;
 
-        public Board()
+        public Board(int Rows, int Cols)
         {
-            int[] tempArr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0 };
+            rows = Rows;
+            cols = Cols;
+            int[] tempArr;
 
+            switch ((rows, cols))
+            {
+                case (4, 4):
+                    tempArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0 };
+                    break;
+
+                case (3, 3):
+                    tempArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 0 };
+                    break;
+
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+            
             do
             {
                 Random.Shared.Shuffle(tempArr);
@@ -57,13 +71,22 @@ namespace Piatnashki_Game
                 }
             }
 
-            int emptyTileIndex = Array.IndexOf(tempArr, 0);
+            if (rows == 4 && cols == 4)
+            {
+                int emptyTileIndex = Array.IndexOf(tempArr, 0);
 
-            int rowFromTop = emptyTileIndex / rows;
+                int rowFromTop = emptyTileIndex / rows;
 
-            int rowFromBottom = rows - rowFromTop;
+                int rowFromBottom = rows - rowFromTop;
 
-            if ((inversionCount % 2) != (rowFromBottom % 2))
+                if ((inversionCount % 2) != (rowFromBottom % 2))
+                {
+                    return true;
+                }
+                return false;
+            }
+            
+            if (inversionCount % 2 == 0)
             {
                 return true;
             }

@@ -33,7 +33,7 @@
 
         public void Run()
         {
-            Board board = new Board();
+            Board board = new Board(4, 4);
             FifteenPuzzleRun choice;
             Console.Clear();
 
