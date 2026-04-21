@@ -2,10 +2,7 @@
 {
     internal class Board
     {
-        private readonly int[,] solvedBoard = {{1,2,3,4},
-                                               {5,6,7,8},
-                                              {9,10,11,12},
-                                              {13,14,15,0}};
+        private readonly int[,] solvedBoard;
         private int rows;
         private int cols;
 
@@ -23,10 +20,12 @@
             switch ((rows, cols))
             {
                 case (4, 4):
+                    solvedBoard = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 0 } };
                     tempArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0 };
                     break;
 
                 case (3, 3):
+                    solvedBoard = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 0 } };
                     tempArr = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 0 };
                     break;
 
@@ -133,26 +132,6 @@
                 }
 
             }
-        }
-
-        private bool FindTile(int tileValue, out int row, out int col)
-        {
-            for (int i = 0; i < rows; ++i)
-            {
-                for (int j = 0; j < cols; ++j)
-                {
-                    if (board[i, j] == tileValue)
-                    {
-                        row = i;
-                        col = j;
-                        return true;
-                    }
-                }
-            }
-
-            row = -1;
-            col = -1;
-            return false;
         }
 
         private bool CanMove(ConsoleKeyInfo keyInfo)

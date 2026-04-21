@@ -16,7 +16,10 @@
 
         public static void ShowRules()
         {
+            Console.Clear();
+            
             int count = 1;
+
             Console.Write("\n");
             foreach(string rule in rules)
             {

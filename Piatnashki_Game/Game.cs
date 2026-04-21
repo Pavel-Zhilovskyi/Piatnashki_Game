@@ -9,8 +9,9 @@
 
             do
             {
-                Console.WriteLine("1 - Play.");
-                Console.WriteLine("2 - See rules.");
+                Console.WriteLine("1 - Play.(4x4 board)");
+                Console.WriteLine("2 - Fast game.(3x3 board)");
+                Console.WriteLine("3 - See rules.");
                 Console.WriteLine("Esc - Exit.");
                 Console.WriteLine("Press the key to chose.");
 
@@ -19,10 +20,16 @@
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.D1:
-                        Run();
+                        Board board = new Board(4, 4);
+                        Run(board);
                         break;
 
                     case ConsoleKey.D2:
+                        Board field = new Board(3, 3);
+                        Run(field);
+                        break;
+
+                    case ConsoleKey.D3:
                         Rules.ShowRules();
                         break;
 
@@ -37,18 +44,16 @@
             } while (keyInfo.Key != ConsoleKey.Escape);
         }
 
-        public void Run()
+        public void Run(Board board)
         {
-            Board board = new Board(3, 3);
             ConsoleKeyInfo keyInfo;
-            
 
             do
             {
                 Console.Clear();
                 board.ShowBoard();
 
-                Console.WriteLine("W/A/S/D - Move the tile.");
+                Console.WriteLine("W/A/S/D - Move the empty tile.");
                 Console.WriteLine("Q - Give up.");
 
                 keyInfo = Console.ReadKey(true);
@@ -71,6 +76,7 @@
                         }
                         else
                         {
+                            Console.Beep();
                             Console.WriteLine("\nUnable to move the tile!(Read rules for more info.)");
                             Thread.Sleep(900);
                         }
