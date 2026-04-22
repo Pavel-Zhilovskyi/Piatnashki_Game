@@ -1,8 +1,16 @@
 ﻿namespace Piatnashki_Game
 {
-    enum ControlsSettings
+    enum ControlsSettings 
     {
         WASD,
         Arrows,
+    }
+
+    enum Direction
+    {
+        Up,
+        Down,
+        Left, 
+        Right,
     }
 }

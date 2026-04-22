@@ -2,7 +2,18 @@
 {
     internal class Settings
     {
-        private ControlsSettings _controls = ControlsSettings.Arrows;
+        private ControlsSettings _controls;
+        
+        public ControlsSettings Controls
+        {
+            get { return _controls; }
+            private set { _controls = value; }
+        }
+
+        public Settings()
+        {
+            _controls = ControlsSettings.Arrows;
+        }
 
         private void ControlsMenu()
         {
@@ -11,11 +22,14 @@
             do
             {
                 Console.Clear();
+
                 Console.WriteLine("CONTROLS\n");
+                Console.WriteLine("You can change the control keys, by choosing the needed option.");
                 Console.WriteLine("1 - WASD");
                 Console.WriteLine("2 - Arrows");
                 Console.WriteLine("Current controls: " + _controls.ToString() + "\n");
                 Console.WriteLine("Esc - Quit controls");
+
                 keyInfo = Console.ReadKey(true);
 
                 if (keyInfo.Key == ConsoleKey.D1)
@@ -38,8 +52,8 @@
             {
                 Console.Clear();
 
-                Console.WriteLine("SETTIGNS\n");
-                Console.WriteLine("1 - Controls(WASD/Arrows): ");
+                Console.WriteLine("SETTINGS\n");
+                Console.WriteLine("1 - Controls");
                 Console.WriteLine("Esc - Quit settings");
 
                 keyInfo = Console.ReadKey(true);

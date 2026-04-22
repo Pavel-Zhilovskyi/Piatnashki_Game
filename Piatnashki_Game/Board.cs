@@ -134,38 +134,38 @@
             }
         }
 
-        private bool CanMove(ConsoleKeyInfo keyInfo)
+        private bool CanMove(Direction? direction)
         {
-            if ((keyInfo.Key == ConsoleKey.W && emptyRow > 0 && emptyRow <= rows) ||
-                (keyInfo.Key == ConsoleKey.S && emptyRow >= 0 && emptyRow < rows - 1) ||
-                (keyInfo.Key == ConsoleKey.A && emptyCol > 0 && emptyCol <= cols) ||
-                (keyInfo.Key == ConsoleKey.D && emptyCol >= 0 && emptyCol < cols - 1))
+            if ((direction == Direction.Up && emptyRow > 0 && emptyRow <= rows) ||
+                (direction == Direction.Down && emptyRow >= 0 && emptyRow < rows - 1) ||
+                (direction == Direction.Left && emptyCol > 0 && emptyCol <= cols) ||
+                (direction == Direction.Right && emptyCol >= 0 && emptyCol < cols - 1))
             {
                 return true;
             }
             return false;
         }
 
-        public bool MoveTile(ConsoleKeyInfo keyInfo)
+        public bool MoveEmptyTile(Direction? direction)
         {
-            if (CanMove(keyInfo))
+            if (CanMove(direction))
             {
-                if (keyInfo.Key == ConsoleKey.W)
+                if (direction == Direction.Up)
                 {
                     (board[emptyRow, emptyCol], board[emptyRow - 1, emptyCol]) =
                         (board[emptyRow - 1, emptyCol], board[emptyRow, emptyCol]);
                 }
-                else if (keyInfo.Key == ConsoleKey.S)
+                else if (direction == Direction.Down)
                 {
                     (board[emptyRow, emptyCol], board[emptyRow + 1, emptyCol]) =
                         (board[emptyRow + 1, emptyCol], board[emptyRow, emptyCol]);
                 }
-                else if (keyInfo.Key == ConsoleKey.A)
+                else if (direction == Direction.Left)
                 {
                     (board[emptyRow, emptyCol], board[emptyRow, emptyCol - 1]) =
                         (board[emptyRow, emptyCol - 1], board[emptyRow, emptyCol]);
                 }
-                else if (keyInfo.Key == ConsoleKey.D)
+                else if (direction == Direction.Right)
                 {
                     (board[emptyRow, emptyCol], board[emptyRow, emptyCol + 1]) =
                         (board[emptyRow, emptyCol + 1], board[emptyRow, emptyCol]);
