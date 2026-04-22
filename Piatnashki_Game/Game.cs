@@ -5,6 +5,7 @@
         public void Menu()
         {
             ConsoleKeyInfo keyInfo;
+            Settings settings = new Settings();
             Console.WriteLine("Fifteen Puzzle\n");
 
             do
@@ -12,8 +13,9 @@
                 Console.WriteLine("1 - Play.(4x4 board)");
                 Console.WriteLine("2 - Fast game.(3x3 board)");
                 Console.WriteLine("3 - See rules.");
+                Console.WriteLine("4 - Settings.");
                 Console.WriteLine("Esc - Exit.");
-                Console.WriteLine("Press the key to chose.");
+                Console.WriteLine("Press the key to choose.");
 
                 keyInfo = Console.ReadKey(true);
 
@@ -31,6 +33,10 @@
 
                     case ConsoleKey.D3:
                         Rules.ShowRules();
+                        break;
+
+                    case ConsoleKey.D4:
+                        settings.SettingsMenu();
                         break;
 
                     case ConsoleKey.Escape:
@@ -82,6 +88,7 @@
                         }
                         break;
                     case ConsoleKey.Q:
+                        Console.Clear();
                         Console.WriteLine("\nYou decided to give up.\n");
                         return;
                 }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Piatnashki_Game")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1b3c43392c7e0909d5c662f6285765d7b42ef0c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+924fab6f98fe898b4def3ee750db0645c2f03f1a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Piatnashki_Game")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Piatnashki_Game")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
