@@ -1,4 +1,6 @@
-﻿namespace Piatnashki_Game
+﻿using System.Diagnostics;
+
+namespace Piatnashki_Game
 {
     internal class Game
     {
@@ -6,10 +8,9 @@
         {
             ConsoleKeyInfo keyInfo;
             Settings settings = new Settings();
-            Console.WriteLine("Fifteen Puzzle\n");
 
-            do
-            {
+            do { 
+                Console.WriteLine("Fifteen Puzzle\n");
                 Console.WriteLine("1 - Play (4x4 board)");
                 Console.WriteLine("2 - Fast game (3x3 board)");
                 Console.WriteLine("3 - See rules");
@@ -22,13 +23,11 @@
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.D1:
-                        InputHandler.ReadNameInput();
                         Board board = new Board(4, 4);
                         Run(board, settings);
                         break;
 
                     case ConsoleKey.D2:
-                        InputHandler.ReadNameInput();
                         Board field = new Board(3, 3);
                         Run(field, settings);
                         break;
@@ -47,7 +46,7 @@
                     
                     default:
                         Console.Clear();
-                        Console.WriteLine("\nWrong key!\n");
+                        Console.Beep();
                         break;
                 }
             } while (keyInfo.Key != ConsoleKey.Escape);
@@ -74,6 +73,7 @@
                     {
                         return Direction.Right;
                     }
+                    Console.Beep();
                     return null;
 
                 case ControlsSettings.Arrows:
@@ -93,6 +93,7 @@
                     {
                         return Direction.Right;
                     }
+                    Console.Beep();
                     return null;
                 default:
                     return null;
@@ -101,7 +102,10 @@
 
         public void Run(Board board, Settings settings)
         {
+            string playerName = InputHandler.ReadNameInput();
             ConsoleKeyInfo keyInfo;
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
 
             do
             {
@@ -116,7 +120,7 @@
                 if(keyInfo.Key == ConsoleKey.Q)
                 {
                     Console.Clear();
-                    Console.WriteLine("\nYou decided to give up.\n");
+                    Console.WriteLine("\nYou decided to give up!\n");
                     return;
                 }
 
@@ -128,6 +132,12 @@
 
                         if (board.IsSolved())
                         {
+                            stopwatch.Stop();
+
+                            Score score = new Score(playerName, stopwatch.Elapsed);
+
+                            //todo Call Scoremanager here
+                            
                             Console.Clear();
                             board.ShowBoard();
                             Console.WriteLine("You have successfully completed the board!\n");
@@ -137,8 +147,6 @@
                     else
                     {
                         Console.Beep();
-                        Console.WriteLine("\nUnable to move the tile!(Read rules for more info.)");
-                        Thread.Sleep(900);
                     }
                 }
             } while (true);

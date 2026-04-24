@@ -40,7 +40,10 @@
                 {
                     _controls = ControlsSettings.Arrows;
                 }
-               
+                else if(keyInfo.Key != ConsoleKey.D1 &&  keyInfo.Key != ConsoleKey.D2 && keyInfo.Key != ConsoleKey.Escape)
+                {
+                    Console.Beep();
+                }
             } while (keyInfo.Key != ConsoleKey.Escape);
         }
 
@@ -66,6 +69,10 @@
 
                     case ConsoleKey.Escape:
                         Console.Clear();
+                        break;
+
+                    default:
+                        Console.Beep();
                         break;
                 }
                 
