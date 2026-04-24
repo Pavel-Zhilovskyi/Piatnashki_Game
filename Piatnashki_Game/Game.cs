@@ -22,11 +22,13 @@
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.D1:
+                        InputHandler.ReadNameInput();
                         Board board = new Board(4, 4);
                         Run(board, settings);
                         break;
 
                     case ConsoleKey.D2:
+                        InputHandler.ReadNameInput();
                         Board field = new Board(3, 3);
                         Run(field, settings);
                         break;

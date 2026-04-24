@@ -20,7 +20,7 @@
             
             int count = 1;
 
-            Console.Write("\n");
+            Console.WriteLine("RULES\n");
             foreach(string rule in rules)
             {
                 Console.WriteLine(count + ". " + rule);
