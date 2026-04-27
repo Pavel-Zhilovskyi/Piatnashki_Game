@@ -8,15 +8,17 @@ namespace Piatnashki_Game
         {
             ConsoleKeyInfo keyInfo;
             Settings settings = new Settings();
+            ScoreManager scoreManager = new ScoreManager();
 
             do { 
                 Console.WriteLine("Fifteen Puzzle\n");
                 Console.WriteLine("1 - Play (4x4 board)");
                 Console.WriteLine("2 - Fast game (3x3 board)");
-                Console.WriteLine("3 - See rules");
-                Console.WriteLine("4 - Settings");
+                Console.WriteLine("3 - View scoreboard");
+                Console.WriteLine("4 - See rules");
+                Console.WriteLine("5 - Settings");
                 Console.WriteLine("Esc - Exit");
-                Console.WriteLine("Press the key to choose.");
+                Console.WriteLine("Press the key to choose.\n");
 
                 keyInfo = Console.ReadKey(true);
 
@@ -24,19 +26,23 @@ namespace Piatnashki_Game
                 {
                     case ConsoleKey.D1:
                         Board board = new Board(4, 4);
-                        Run(board, settings);
+                        Run(board, settings, scoreManager);
                         break;
 
                     case ConsoleKey.D2:
                         Board field = new Board(3, 3);
-                        Run(field, settings);
+                        Run(field, settings, scoreManager);
                         break;
 
                     case ConsoleKey.D3:
-                        Rules.ShowRules();
+                        ShowScoreboard(scoreManager.ReadScoreFromFile());
                         break;
 
                     case ConsoleKey.D4:
+                        Rules.ShowRules();
+                        break;
+
+                    case ConsoleKey.D5:
                         settings.SettingsMenu();
                         break;
 
@@ -50,6 +56,19 @@ namespace Piatnashki_Game
                         break;
                 }
             } while (keyInfo.Key != ConsoleKey.Escape);
+        }
+
+        public void ShowScoreboard(List<Score> scores)
+        {
+            Console.Clear();
+
+            foreach(Score score in scores)
+            {
+                Thread.Sleep(300);
+                Console.WriteLine(score.Name + " " + score.Time.ToString("hh\\:mm\\:ss"));
+            }
+            Console.WriteLine();
+            Thread.Sleep(300);
         }
 
         private Direction? ConvertKey(ConsoleKeyInfo keyInfo, Settings settings)
@@ -100,7 +119,7 @@ namespace Piatnashki_Game
             }
         }
 
-        public void Run(Board board, Settings settings)
+        public void Run(Board board, Settings settings, ScoreManager scoreManager)
         {
             string playerName = InputHandler.ReadNameInput();
             ConsoleKeyInfo keyInfo;
@@ -119,6 +138,7 @@ namespace Piatnashki_Game
 
                 if(keyInfo.Key == ConsoleKey.Q)
                 {
+                    stopwatch.Stop();
                     Console.Clear();
                     Console.WriteLine("\nYou decided to give up!\n");
                     return;
@@ -136,8 +156,8 @@ namespace Piatnashki_Game
 
                             Score score = new Score(playerName, stopwatch.Elapsed);
 
-                            //todo Call Scoremanager here
-                            
+                            scoreManager.WriteScoreFile(score);
+
                             Console.Clear();
                             board.ShowBoard();
                             Console.WriteLine("You have successfully completed the board!\n");

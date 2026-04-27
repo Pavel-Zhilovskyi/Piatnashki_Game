@@ -2,13 +2,13 @@
 {
     internal class Score
     {
-        public string _name { get; }
+        public string Name { get; }
 
-        public TimeSpan _time { get; }
+        public TimeSpan Time { get; }
 
         public Score(string name, TimeSpan time) {
-            _name = name;
-            _time = time;
+            Name = name;
+            Time = time;
         }
     }
 }

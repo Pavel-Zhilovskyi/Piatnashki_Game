@@ -5,22 +5,20 @@
         public static string ReadNameInput()
         {
             string name;
-
             do
             {
-                Console.Write("\nEnter your name: ");
+                Console.Write("Enter your nickname: ");
                 name = Console.ReadLine();
 
-                if (name.All(char.IsLetter))
+                if (string.IsNullOrWhiteSpace(name))
                 {
-                    break;
+                    Console.WriteLine("\nEnter your valid nickname!");
                 }
                 else
                 {
-                    Console.WriteLine("\nOnly letters allowed!");
+                    break;
                 }
             } while (true);
-
             return name;
         }
     }
