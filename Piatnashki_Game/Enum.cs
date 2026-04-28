@@ -13,4 +13,11 @@
         Left, 
         Right,
     }
+
+    enum GameMode
+    {
+        Classic,
+        FastGame,
+        Default,
+    }
 }

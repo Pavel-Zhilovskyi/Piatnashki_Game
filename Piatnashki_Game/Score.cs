@@ -6,9 +6,26 @@
 
         public TimeSpan Time { get; }
 
-        public Score(string name, TimeSpan time) {
+        public GameMode Mode { get; }
+
+        public Score(string name, TimeSpan time, GameMode mode)
+        {
             Name = name;
             Time = time;
+            Mode = mode;
+        }
+
+        static public void ShowScoreboard(List<Score> scores)
+        {
+            Console.Clear();
+
+            foreach (Score score in scores)
+            {
+                Thread.Sleep(300);
+                Console.WriteLine($"{score.Name} {score.Time:hh\\:mm\\:ss} {score.Mode}");
+            }
+            Console.WriteLine();
+            Thread.Sleep(300);
         }
     }
 }

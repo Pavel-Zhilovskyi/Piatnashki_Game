@@ -2,24 +2,35 @@
 {
     internal class Settings
     {
-        private ControlsSettings _controls;
-        
+        private ControlsSettings _controls = ControlsSettings.Arrows;
+
+        private TimeSpan _GameTime3x3 = new TimeSpan(0, 3, 0);
+
+        public TimeSpan Time3x3
+        {
+            get { return _GameTime3x3; }
+            set { _GameTime3x3 = value; }
+        }
+
+        private TimeSpan _GameTime4x4 = new TimeSpan(0, 7, 0);
+
+        public TimeSpan Time4x4
+        {
+            get { return _GameTime4x4; }
+            set { _GameTime4x4 = value; }
+        }
+
         public ControlsSettings Controls
         {
             get { return _controls; }
-            private set { _controls = value; }
-        }
-
-        public Settings()
-        {
-            _controls = ControlsSettings.Arrows;
+            set { _controls = value; }
         }
 
         private void ControlsMenu()
         {
             ConsoleKeyInfo keyInfo;
 
-            do
+            while(true)
             {
                 Console.Clear();
 
@@ -32,26 +43,31 @@
 
                 keyInfo = Console.ReadKey(true);
 
-                if (keyInfo.Key == ConsoleKey.D1)
+                switch (keyInfo.Key)
                 {
-                    _controls = ControlsSettings.WASD;
+                    case ConsoleKey.D1:
+                        _controls = ControlsSettings.WASD;
+                        break;
+
+                    case ConsoleKey.D2:
+                        _controls = ControlsSettings.Arrows;
+                        break;
+
+                    case ConsoleKey.Escape:
+                        return;
+
+                    default:
+                        Console.Beep();
+                        break;
                 }
-                else if(keyInfo.Key == ConsoleKey.D2)
-                {
-                    _controls = ControlsSettings.Arrows;
-                }
-                else if(keyInfo.Key != ConsoleKey.D1 &&  keyInfo.Key != ConsoleKey.D2 && keyInfo.Key != ConsoleKey.Escape)
-                {
-                    Console.Beep();
-                }
-            } while (keyInfo.Key != ConsoleKey.Escape);
+            }
         }
 
         public void SettingsMenu()
         {
             ConsoleKeyInfo keyInfo;
 
-            do
+            while(true)
             {
                 Console.Clear();
 
@@ -69,14 +85,13 @@
 
                     case ConsoleKey.Escape:
                         Console.Clear();
-                        break;
+                        return;
 
                     default:
                         Console.Beep();
                         break;
                 }
-                
-            } while (keyInfo.Key != ConsoleKey.Escape);
+            }
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Piatnashki_Game
                 Console.WriteLine("Fifteen Puzzle\n");
                 Console.WriteLine("1 - Play (4x4 board)");
                 Console.WriteLine("2 - Fast game (3x3 board)");
-                Console.WriteLine("3 - View scoreboard");
+                Console.WriteLine("3 - Scoreboard");
                 Console.WriteLine("4 - See rules");
                 Console.WriteLine("5 - Settings");
                 Console.WriteLine("Esc - Exit");
@@ -26,16 +26,16 @@ namespace Piatnashki_Game
                 {
                     case ConsoleKey.D1:
                         Board board = new Board(4, 4);
-                        Run(board, settings, scoreManager);
+                        Run(board, settings, scoreManager, GameMode.Classic);
                         break;
 
                     case ConsoleKey.D2:
                         Board field = new Board(3, 3);
-                        Run(field, settings, scoreManager);
+                        Run(field, settings, scoreManager, GameMode.FastGame);
                         break;
 
                     case ConsoleKey.D3:
-                        ShowScoreboard(scoreManager.ReadScoreFromFile());
+                        scoreManager.ScoreBoardMenu();
                         break;
 
                     case ConsoleKey.D4:
@@ -56,19 +56,6 @@ namespace Piatnashki_Game
                         break;
                 }
             } while (keyInfo.Key != ConsoleKey.Escape);
-        }
-
-        public void ShowScoreboard(List<Score> scores)
-        {
-            Console.Clear();
-
-            foreach(Score score in scores)
-            {
-                Thread.Sleep(300);
-                Console.WriteLine(score.Name + " " + score.Time.ToString("hh\\:mm\\:ss"));
-            }
-            Console.WriteLine();
-            Thread.Sleep(300);
         }
 
         private Direction? ConvertKey(ConsoleKeyInfo keyInfo, Settings settings)
@@ -119,7 +106,7 @@ namespace Piatnashki_Game
             }
         }
 
-        public void Run(Board board, Settings settings, ScoreManager scoreManager)
+        public void Run(Board board, Settings settings, ScoreManager scoreManager, GameMode mode)
         {
             string playerName = InputHandler.ReadNameInput();
             ConsoleKeyInfo keyInfo;
@@ -154,7 +141,7 @@ namespace Piatnashki_Game
                         {
                             stopwatch.Stop();
 
-                            Score score = new Score(playerName, stopwatch.Elapsed);
+                            Score score = new Score(playerName, stopwatch.Elapsed, mode);
 
                             scoreManager.WriteScoreFile(score);
 
