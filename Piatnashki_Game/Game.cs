@@ -7,7 +7,10 @@ namespace Piatnashki_Game
         public void Menu()
         {
             ConsoleKeyInfo keyInfo;
-            Settings settings = new Settings();
+            
+            SettingsManager settingsManager = new SettingsManager();
+            Settings settings = settingsManager.LoadSettingsFromFile();
+            SettingsMenuUI settingsMenu = new SettingsMenuUI();
             ScoreManager scoreManager = new ScoreManager();
 
             do { 
@@ -43,7 +46,7 @@ namespace Piatnashki_Game
                         break;
 
                     case ConsoleKey.D5:
-                        settings.SettingsMenu();
+                        settingsMenu.SettingsMenu(settings, settingsManager);
                         break;
 
                     case ConsoleKey.Escape:
@@ -110,10 +113,26 @@ namespace Piatnashki_Game
         {
             string playerName = InputHandler.ReadNameInput();
             ConsoleKeyInfo keyInfo;
+            TimeSpan timerLimit;
+
+            switch (mode)
+            {
+                case GameMode.Classic:
+                    timerLimit = settings.Time4x4;
+                    break;
+
+                case GameMode.FastGame:
+                    timerLimit = settings.Time3x3;
+                    break;
+
+                default:
+                    throw new InvalidOperationException("GameMode must be defined!");
+            }
+
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
-            do
+            while(stopwatch.Elapsed < timerLimit)
             {
                 Console.Clear();
                 board.ShowBoard();
@@ -156,7 +175,9 @@ namespace Piatnashki_Game
                         Console.Beep();
                     }
                 }
-            } while (true);
+            }
+
+            Console.WriteLine("\nTime is out!\n");
         }
     }
 }

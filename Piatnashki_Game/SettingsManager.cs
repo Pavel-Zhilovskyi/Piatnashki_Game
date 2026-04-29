@@ -15,11 +15,10 @@
             filePath = Path.Combine(folder, "Settings.txt");
         }
 
-        public Settings ReadSettingsFromFile()
+        public Settings LoadSettingsFromFile()
         {
             if (!File.Exists(filePath))
             {
-                Console.WriteLine("File not found!");
                 return new Settings();
             }
 
@@ -32,28 +31,35 @@
             {
                 parts = lines[i].Split('=');
 
-                switch (parts[0])
+                try 
+                { 
+                    switch (parts[0])
+                    {
+                        case "Controls":
+                            if (Enum.TryParse(parts[1], true, out ControlsSettings controls))
+                            {
+                                settings.Controls = controls;
+                            }
+                            break;
+
+                        case "Time4x4":
+                            if (TimeSpan.TryParse(parts[1], out TimeSpan time))
+                            {
+                                settings.Time4x4 = time;
+                            }
+                            break;
+
+                        case "Time3x3":
+                            if (TimeSpan.TryParse(parts[1], out TimeSpan timer))
+                            {
+                                settings.Time3x3 = timer;
+                            }
+                            break;
+                    }
+                }
+                catch(System.IndexOutOfRangeException ex)
                 {
-                    case "Controls":
-                        if (Enum.TryParse(parts[1], true, out ControlsSettings controls))
-                        {
-                            settings.Controls = controls;
-                        }
-                        break;
-
-                    case "Time4x4":
-                        if (TimeSpan.TryParse(parts[1], out TimeSpan time))
-                        {
-                            settings.Time4x4 = time;
-                        }
-                        break;
-
-                    case "Time3x3":
-                        if (TimeSpan.TryParse(parts[1], out TimeSpan timer))
-                        {
-                            settings.Time3x3 = timer;
-                        }
-                        break;
+                    Console.WriteLine(ex.Message);
                 }
             }
             return settings;
@@ -70,7 +76,7 @@
         {
             try
             {
-                File.AppendAllText(filePath, SettingsToString(settings) + "\n");
+                File.WriteAllText(filePath, SettingsToString(settings) + "\n");
             }
             catch (IOException ex)
             {
