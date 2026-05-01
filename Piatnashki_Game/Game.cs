@@ -135,6 +135,8 @@ namespace Piatnashki_Game
             while(stopwatch.Elapsed < timerLimit)
             {
                 Console.Clear();
+                TimeSpan timeLeft = timerLimit - stopwatch.Elapsed;
+                Console.WriteLine("Time left: " + timeLeft.ToString(@"hh\:mm\:ss"));
                 board.ShowBoard();
 
                 Console.WriteLine($"Use {settings.Controls} to move the empty tile.");
@@ -176,7 +178,6 @@ namespace Piatnashki_Game
                     }
                 }
             }
-
             Console.WriteLine("\nTime is out!\n");
         }
     }
