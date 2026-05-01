@@ -142,41 +142,45 @@ namespace Piatnashki_Game
                 Console.WriteLine($"Use {settings.Controls} to move the empty tile.");
                 Console.WriteLine("Q - Give up.");
 
-                keyInfo = Console.ReadKey(true);
-
-                if(keyInfo.Key == ConsoleKey.Q)
+                if (Console.KeyAvailable)
                 {
-                    stopwatch.Stop();
-                    Console.Clear();
-                    Console.WriteLine("\nYou decided to give up!\n");
-                    return;
-                }
+                    keyInfo = Console.ReadKey(true);
 
-                Direction? direction = ConvertKey(keyInfo, settings);
-
-                if(direction != null) {
-                    if (board.MoveEmptyTile(direction))
+                    if (keyInfo.Key == ConsoleKey.Q)
                     {
+                        stopwatch.Stop();
+                        Console.Clear();
+                        Console.WriteLine("\nYou decided to give up!\n");
+                        return;
+                    }
 
-                        if (board.IsSolved())
+                    Direction? direction = ConvertKey(keyInfo, settings);
+
+                    if(direction != null) {
+                        if (board.MoveEmptyTile(direction))
                         {
-                            stopwatch.Stop();
 
-                            Score score = new Score(playerName, stopwatch.Elapsed, mode);
+                            if (board.IsSolved())
+                            {
+                                stopwatch.Stop();
 
-                            scoreManager.WriteScoreFile(score);
+                                Score score = new Score(playerName, stopwatch.Elapsed, mode);
 
-                            Console.Clear();
-                            board.ShowBoard();
-                            Console.WriteLine("You have successfully completed the board!\n");
-                            return;
+                                scoreManager.WriteScoreFile(score);
+
+                                Console.Clear();
+                                board.ShowBoard();
+                                Console.WriteLine("You have successfully completed the board!\n");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            Console.Beep();
                         }
                     }
-                    else
-                    {
-                        Console.Beep();
-                    }
                 }
+                Thread.Sleep(30);
             }
             Console.WriteLine("\nTime is out!\n");
         }

@@ -67,8 +67,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T21:52:09.728Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -78,7 +77,7 @@
               "RelativeDocumentMoniker": "Piatnashki_Game\\Game.cs",
               "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Game.cs",
               "RelativeToolTip": "Piatnashki_Game\\Game.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAowIkAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALYAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-11T10:17:39.739Z",
               "EditorCaption": ""
@@ -129,8 +128,7 @@
               "RelativeToolTip": "Piatnashki_Game\\SettingsManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T12:00:03.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-28T12:00:03.72Z"
             },
             {
               "$type": "Document",
