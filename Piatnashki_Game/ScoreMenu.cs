@@ -18,7 +18,7 @@
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.D1:
-                        Score.ShowScoreboard(scoreStorage.ReadScoreFromFile());
+                        ScoreboardPrint.ShowScoreboard(scoreStorage.ReadScoreFromFile());
                         break;
 
                     case ConsoleKey.D2:

@@ -2,17 +2,12 @@
 {
     internal class ScoreStorage
     {
-        private string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-
         private string filePath;
 
         public ScoreStorage()
-        { 
-            string folder = Path.Combine(baseDir, "Piatnashki_Game_Score", "Score");
-
-            Directory.CreateDirectory(folder);
-
-            filePath = Path.Combine(folder, "score.txt");
+        {
+            filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
+                "Piatnashki_Game_Score", "Score");
         }
 
         private string ScoreToString(Score score)

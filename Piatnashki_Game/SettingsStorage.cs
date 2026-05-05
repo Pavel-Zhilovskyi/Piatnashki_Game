@@ -2,17 +2,12 @@
 {
     internal class SettingsStorage
     {
-        private string baseDir = AppDomain.CurrentDomain.BaseDirectory;
-
         private string filePath;
 
         public SettingsStorage()
         {
-            string folder = Path.Combine(baseDir, "Piatnashki_Game_Settings", "Settings");
-
-            Directory.CreateDirectory(folder);
-
-            filePath = Path.Combine(folder, "Settings.txt");
+            filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
+                "Piatnashki_Game_Settings", "Settings");
         }
 
         public Settings LoadSettingsFromFile()
