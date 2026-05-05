@@ -2,7 +2,7 @@
 {
     internal class SettingsMenuUI
     {
-        public void SettingsMenu(Settings settings, SettingsManager settingsManager)
+        public void SettingsMenu(Settings settings, SettingsStorage settingsManager)
         {
             ConsoleKeyInfo keyInfo;
 
@@ -38,7 +38,7 @@
             }
         }
 
-        private void TimerMenu(Settings settings, SettingsManager settingsManager)
+        private void TimerMenu(Settings settings, SettingsStorage settingsManager)
         {
             ConsoleKeyInfo keyInfo;
 
@@ -80,7 +80,7 @@
             }
         }
 
-        private void ControlsMenu(Settings settings, SettingsManager settingsManager)
+        private void ControlsMenu(Settings settings, SettingsStorage settingsManager)
         {
             ConsoleKeyInfo keyInfo;
 

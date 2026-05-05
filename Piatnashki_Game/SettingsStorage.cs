@@ -1,12 +1,12 @@
 ﻿namespace Piatnashki_Game
 {
-    internal class SettingsManager
+    internal class SettingsStorage
     {
         private string baseDir = AppDomain.CurrentDomain.BaseDirectory;
 
         private string filePath;
 
-        public SettingsManager()
+        public SettingsStorage()
         {
             string folder = Path.Combine(baseDir, "Piatnashki_Game_Settings", "Settings");
 
@@ -31,35 +31,32 @@
             {
                 parts = lines[i].Split('=');
 
-                try 
-                { 
-                    switch (parts[0])
-                    {
-                        case "Controls":
-                            if (Enum.TryParse(parts[1], true, out ControlsSettings controls))
-                            {
-                                settings.Controls = controls;
-                            }
-                            break;
-
-                        case "Time4x4":
-                            if (TimeSpan.TryParse(parts[1], out TimeSpan time))
-                            {
-                                settings.Time4x4 = time;
-                            }
-                            break;
-
-                        case "Time3x3":
-                            if (TimeSpan.TryParse(parts[1], out TimeSpan timer))
-                            {
-                                settings.Time3x3 = timer;
-                            }
-                            break;
-                    }
-                }
-                catch(System.IndexOutOfRangeException ex)
+                if(parts.Length != 2)
                 {
-                    Console.WriteLine(ex.Message);
+                    continue;
+                }
+                switch (parts[0])
+                {
+                    case "Controls":
+                        if (Enum.TryParse(parts[1], true, out ControlsSettings controls))
+                        {
+                            settings.Controls = controls;
+                        }
+                        break;
+
+                    case "Time4x4":
+                        if (TimeSpan.TryParse(parts[1], out TimeSpan time))
+                        {
+                            settings.Time4x4 = time;
+                        }
+                        break;
+
+                    case "Time3x3":
+                        if (TimeSpan.TryParse(parts[1], out TimeSpan timer))
+                        {
+                            settings.Time3x3 = timer;
+                        }
+                        break;
                 }
             }
             return settings;

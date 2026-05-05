@@ -10,7 +10,7 @@
                 Console.Write("Enter your nickname: ");
                 name = Console.ReadLine();
 
-                if (string.IsNullOrWhiteSpace(name))
+                if (string.IsNullOrWhiteSpace(name) || name.Contains(';'))
                 {
                     Console.WriteLine("\nEnter your valid nickname!");
                 }
