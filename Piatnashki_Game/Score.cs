@@ -2,17 +2,17 @@
 {
     internal class Score
     {
-        public string Name { get; }
+        public string name { get; }
 
-        public TimeSpan Time { get; }
+        public TimeSpan time { get; }
 
-        public GameMode Mode { get; }
+        public GameMode mode { get; }
 
-        public Score(string name, TimeSpan time, GameMode mode)
+        public Score(string Name, TimeSpan Time, GameMode Mode)
         {
-            Name = name;
-            Time = time;
-            Mode = mode;
+            name = Name;
+            time = Time;
+            mode = Mode;
         }
     }
 }

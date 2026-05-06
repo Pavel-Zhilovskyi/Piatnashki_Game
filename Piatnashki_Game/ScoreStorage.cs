@@ -12,7 +12,7 @@
 
         private string ScoreToString(Score score)
         {
-            return score.Name + ";" + score.Time.ToString(@"hh\:mm\:ss") + ";" + score.Mode.ToString();
+            return score.name + ";" + score.time.ToString(@"hh\:mm\:ss") + ";" + score.mode.ToString();
         }
 
         public void WriteScoreFile(Score score)
@@ -64,7 +64,6 @@
 
                 scores.Add(score);
             }
-
             return scores;
         }
 

@@ -1,8 +1,8 @@
 ﻿namespace Piatnashki_Game
 {
-    internal class SettingsMenuUI
+    internal class SettingsMenu
     {
-        public void SettingsMenu(Settings settings, SettingsStorage settingsManager)
+        public void SettingsGeneralMenu(Settings settings, SettingsStorage settingsManager)
         {
             ConsoleKeyInfo keyInfo;
 

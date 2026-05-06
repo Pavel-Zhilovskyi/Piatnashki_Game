@@ -3,21 +3,23 @@
     internal class Board
     {
         private readonly int[,] solvedBoard;
-        private int rows;
-        private int cols;
 
-        private int[,] board;
+        public int Rows { get; }
+
+        public int Cols { get; }
+
+        private readonly int[,] board;
 
         private int emptyRow;
         private int emptyCol;
 
-        public Board(int Rows, int Cols)
+        public Board(int rows, int cols)
         {
-            rows = Rows;
-            cols = Cols;
+            Rows = rows;
+            Cols = cols;
             int[] tempArr;
 
-            switch ((rows, cols))
+            switch ((Rows, Cols))
             {
                 case (4, 4):
                     solvedBoard = new int[,] { { 1, 2, 3, 4 }, { 5, 6, 7, 8 }, { 9, 10, 11, 12 }, { 13, 14, 15, 0 } };
@@ -38,7 +40,6 @@
                 Random.Shared.Shuffle(tempArr);
             } while (!IsSolvable(tempArr) || IsSolved(tempArr));
 
-
             board = new int[rows, cols];
 
             int index = 0;
@@ -50,6 +51,11 @@
                 }
             }
             FindEmptyTile();
+        }
+
+        public int GetValue(int row, int col)
+        {
+            return board[row, col];
         }
 
         private bool IsSolvable(int[] tempArr)
@@ -70,13 +76,13 @@
                 }
             }
 
-            if (rows == 4 && cols == 4)
+            if (Rows == 4 && Cols == 4)
             {
                 int emptyTileIndex = Array.IndexOf(tempArr, 0);
 
-                int rowFromTop = emptyTileIndex / rows;
+                int rowFromTop = emptyTileIndex / Rows;
 
-                int rowFromBottom = rows - rowFromTop;
+                int rowFromBottom = Rows - rowFromTop;
 
                 if ((inversionCount % 2) != (rowFromBottom % 2))
                 {
@@ -92,36 +98,11 @@
             return false;
         }
 
-        public void ShowBoard()
-        {
-            Console.Write("\n");
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < cols; j++)
-                {
-                    if (board[i, j] > 0 && board[i, j] < 10)
-                    {
-                        Console.Write(board[i, j] + "  ");
-                    }
-                    else if (board[i, j] == 0)
-                    {
-                        Console.Write("_" + "  ");
-                    }
-                    else
-                    {
-                        Console.Write(board[i, j] + " ");
-                    }
-                }
-                Console.Write("\n");
-            }
-            Console.Write("\n");
-        }
-
         private void FindEmptyTile()
         {
-            for (int i = 0; i < rows; i++)
+            for (int i = 0; i < Rows; i++)
             {
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < Cols; j++)
                 {
                     if (board[i, j] == 0)
                     {
@@ -130,16 +111,15 @@
                         return;
                     }
                 }
-
             }
         }
-
+        
         private bool CanMove(Direction? direction)
         {
-            if ((direction == Direction.Up && emptyRow > 0 && emptyRow <= rows) ||
-                (direction == Direction.Down && emptyRow >= 0 && emptyRow < rows - 1) ||
-                (direction == Direction.Left && emptyCol > 0 && emptyCol <= cols) ||
-                (direction == Direction.Right && emptyCol >= 0 && emptyCol < cols - 1))
+            if ((direction == Direction.Up && emptyRow > 0) ||
+                (direction == Direction.Down && emptyRow >= 0 && emptyRow < Rows - 1) ||
+                (direction == Direction.Left && emptyCol > 0) ||
+                (direction == Direction.Right && emptyCol >= 0 && emptyCol < Cols - 1))
             {
                 return true;
             }
@@ -154,24 +134,31 @@
                 {
                     (board[emptyRow, emptyCol], board[emptyRow - 1, emptyCol]) =
                         (board[emptyRow - 1, emptyCol], board[emptyRow, emptyCol]);
+
+                    emptyRow--;
                 }
                 else if (direction == Direction.Down)
                 {
                     (board[emptyRow, emptyCol], board[emptyRow + 1, emptyCol]) =
                         (board[emptyRow + 1, emptyCol], board[emptyRow, emptyCol]);
+
+                    emptyRow++;
                 }
                 else if (direction == Direction.Left)
                 {
                     (board[emptyRow, emptyCol], board[emptyRow, emptyCol - 1]) =
                         (board[emptyRow, emptyCol - 1], board[emptyRow, emptyCol]);
+
+                    emptyCol--;
                 }
                 else if (direction == Direction.Right)
                 {
                     (board[emptyRow, emptyCol], board[emptyRow, emptyCol + 1]) =
                         (board[emptyRow, emptyCol + 1], board[emptyRow, emptyCol]);
+
+                    emptyCol++;
                 }
 
-                FindEmptyTile();
                 return true;
             }
             return false;
@@ -179,11 +166,13 @@
 
         private bool IsSolved(int[] tempArr)
         {
-            for (int i = 0; i < rows; i++)
+            int index = 0;
+
+            for (int i = 0; i < Rows; i++)
             {
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < Cols; j++)
                 {
-                    if (tempArr[i * cols + j] != solvedBoard[i, j])
+                    if (tempArr[index++] != solvedBoard[i, j])
                     {
                         return false;
                     }
@@ -194,9 +183,9 @@
 
         public bool IsSolved()
         {
-            for (int i = 0; i < rows; ++i)
+            for (int i = 0; i < Rows; ++i)
             {
-                for (int j = 0; j < cols; ++j)
+                for (int j = 0; j < Cols; ++j)
                 {
                     if (board[i, j] != solvedBoard[i, j])
                     {

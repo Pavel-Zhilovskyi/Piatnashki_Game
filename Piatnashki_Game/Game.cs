@@ -2,146 +2,22 @@
 
 namespace Piatnashki_Game
 {
-    internal class Game
+    static class Game
     {
-        public void Menu()
-        {
-            SettingsStorage settingsStorage = new SettingsStorage();
-            Settings settings = settingsStorage.LoadSettingsFromFile();
-            SettingsMenuUI settingsMenu = new SettingsMenuUI();
-            ScoreStorage scoreStorage = new ScoreStorage();
-            ScoreMenu scoreMenu = new ScoreMenu();
-
-            ConsoleKeyInfo keyInfo;
-
-            do { 
-                Console.WriteLine("Fifteen Puzzle\n");
-                Console.WriteLine("1 - Play (4x4 board)");
-                Console.WriteLine("2 - Fast game (3x3 board)");
-                Console.WriteLine("3 - Scoreboard");
-                Console.WriteLine("4 - See rules");
-                Console.WriteLine("5 - Settings");
-                Console.WriteLine("Esc - Exit");
-                Console.WriteLine("Press the key to choose.\n");
-
-                keyInfo = Console.ReadKey(true);
-
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.D1:
-                        Board board = new Board(4, 4);
-                        Run(board, settings, scoreStorage, GameMode.Classic);
-                        break;
-
-                    case ConsoleKey.D2:
-                        Board field = new Board(3, 3);
-                        Run(field, settings, scoreStorage, GameMode.FastGame);
-                        break;
-
-                    case ConsoleKey.D3:
-                        scoreMenu.ScoreBoardMenu(scoreStorage);
-                        break;
-
-                    case ConsoleKey.D4:
-                        Rules.ShowRules();
-                        break;
-
-                    case ConsoleKey.D5:
-                        settingsMenu.SettingsMenu(settings, settingsStorage);
-                        break;
-
-                    case ConsoleKey.Escape:
-                        Console.Write("\nBYE!");
-                        break;
-                    
-                    default:
-                        Console.Clear();
-                        Console.Beep();
-                        break;
-                }
-            } while (keyInfo.Key != ConsoleKey.Escape);
-        }
-
-        private Direction? ConvertKey(ConsoleKeyInfo keyInfo, Settings settings)
-        {
-            switch (settings.Controls)
-            {
-                case ControlsSettings.WASD:
-                    if(keyInfo.Key == ConsoleKey.W)
-                    {
-                        return Direction.Up;
-                    }
-                    else if(keyInfo.Key == ConsoleKey.S)
-                    {
-                        return Direction.Down;
-                    }
-                    else if (keyInfo.Key == ConsoleKey.A)
-                    {
-                        return Direction.Left;
-                    }
-                    else if (keyInfo.Key == ConsoleKey.D)
-                    {
-                        return Direction.Right;
-                    }
-                    Console.Beep();
-                    return null;
-
-                case ControlsSettings.Arrows:
-                    if (keyInfo.Key == ConsoleKey.UpArrow)
-                    {
-                        return Direction.Up;
-                    }
-                    else if (keyInfo.Key == ConsoleKey.DownArrow)
-                    {
-                        return Direction.Down;
-                    }
-                    else if (keyInfo.Key == ConsoleKey.LeftArrow)
-                    {
-                        return Direction.Left;
-                    }
-                    else if (keyInfo.Key == ConsoleKey.RightArrow)
-                    {
-                        return Direction.Right;
-                    }
-                    Console.Beep();
-                    return null;
-                default:
-                    return null;
-            }
-        }
-
-        public void Run(Board board, Settings settings, ScoreStorage scoreStorage, GameMode mode)
+        public static void Run(Board board, Settings settings, ScoreStorage scoreStorage, GameMode mode)
         {
             string playerName = InputHandler.ReadNameInput();
             ConsoleKeyInfo keyInfo;
-            TimeSpan timerLimit;
-
-            switch (mode)
-            {
-                case GameMode.Classic:
-                    timerLimit = settings.Time4x4;
-                    break;
-
-                case GameMode.FastGame:
-                    timerLimit = settings.Time3x3;
-                    break;
-
-                default:
-                    throw new InvalidOperationException("GameMode must be defined!");
-            }
+            TimeSpan timerLimit = settings.GetGameTimerMode(mode);
 
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
             while(stopwatch.Elapsed < timerLimit)
             {
-                Console.Clear();
                 TimeSpan timeLeft = timerLimit - stopwatch.Elapsed;
-                Console.WriteLine("Time left: " + timeLeft.ToString(@"hh\:mm\:ss"));
-                board.ShowBoard();
 
-                Console.WriteLine($"Use {settings.Controls} to move the empty tile.");
-                Console.WriteLine("Q - Give up.");
+                GameRunInfoPrinter.PrintRunInfo(timeLeft, board, settings);
 
                 if (Console.KeyAvailable)
                 {
@@ -150,14 +26,13 @@ namespace Piatnashki_Game
                     if (keyInfo.Key == ConsoleKey.Q)
                     {
                         stopwatch.Stop();
-                        Console.Clear();
-                        Console.WriteLine("\nYou decided to give up!\n");
+                        GameResultPrinter.PrintGameResult(GameResult.GiveUp);
                         return;
                     }
 
-                    Direction? direction = ConvertKey(keyInfo, settings);
+                    Direction? direction = KeyInputConverter.ConvertKey(keyInfo, settings);
 
-                    if(direction != null) {
+                if (direction != null) {
                         if (board.MoveEmptyTile(direction))
                         {
 
@@ -170,8 +45,8 @@ namespace Piatnashki_Game
                                 scoreStorage.WriteScoreFile(score);
 
                                 Console.Clear();
-                                board.ShowBoard();
-                                Console.WriteLine("You have successfully completed the board!\n");
+                                BoardPrinter.ShowBoard(board);
+                                GameResultPrinter.PrintGameResult(GameResult.Win);
                                 return;
                             }
                         }
@@ -183,7 +58,7 @@ namespace Piatnashki_Game
                 }
                 Thread.Sleep(30);
             }
-            Console.WriteLine("\nTime is out!\n");
+            GameResultPrinter.PrintGameResult(GameResult.Timeout);
         }
     }
 }

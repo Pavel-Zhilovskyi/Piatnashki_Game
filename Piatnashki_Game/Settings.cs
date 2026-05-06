@@ -25,5 +25,20 @@
             get { return _GameTime4x4; }
             set { _GameTime4x4 = value; }
         }
+
+        public TimeSpan GetGameTimerMode(GameMode mode)
+        {
+            switch (mode)
+            {
+                case GameMode.Classic:
+                    return Time4x4;
+
+                case GameMode.FastGame:
+                    return Time3x3;
+
+                default:
+                    throw new InvalidOperationException("GameMode must be defined!");
+            }
+        }
     }
 }

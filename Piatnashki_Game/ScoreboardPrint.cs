@@ -9,8 +9,8 @@
             foreach (Score score in scores)
             {
                 Thread.Sleep(300);
-                Console.WriteLine($"{score.Name} {score.Time.Hours} h {score.Time.Minutes} min " +
-                    $"{score.Time.Seconds} sec. Game mode: {score.Mode}");
+                Console.WriteLine($"{score.name} {score.time.Hours} h {score.time.Minutes} min " +
+                    $"{score.time.Seconds} sec. Game mode: {score.mode}");
             }
 
             Console.WriteLine();

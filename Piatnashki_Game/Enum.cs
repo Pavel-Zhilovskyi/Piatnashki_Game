@@ -18,6 +18,12 @@
     {
         Classic,
         FastGame,
-        Default,
+    }
+
+    enum GameResult
+    {
+        Win,
+        GiveUp,
+        Timeout,
     }
 }

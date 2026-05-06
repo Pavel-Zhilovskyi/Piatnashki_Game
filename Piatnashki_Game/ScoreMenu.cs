@@ -2,7 +2,7 @@
 {
     internal class ScoreMenu
     {
-        public void ScoreBoardMenu(ScoreStorage scoreStorage)
+        public void ScoreboardMenu(ScoreStorage scoreStorage)
         {
             ConsoleKeyInfo keyInfo;
             Console.Clear();
