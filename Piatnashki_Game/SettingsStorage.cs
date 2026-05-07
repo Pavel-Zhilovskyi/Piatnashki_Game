@@ -4,6 +4,8 @@
     {
         private string filePath;
 
+        private SafeFileHelper safeFileHelper = new SafeFileHelper();
+
         public SettingsStorage()
         {
             filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
@@ -66,14 +68,7 @@
 
         public void WriteSettingsFile(Settings settings)
         {
-            try
-            {
-                File.WriteAllText(filePath, SettingsToString(settings) + "\n");
-            }
-            catch (IOException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            safeFileHelper.Write(filePath, SettingsToString(settings) + "\n");
         }
     }
 }

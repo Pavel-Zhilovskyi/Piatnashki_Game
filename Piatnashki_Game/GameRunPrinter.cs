@@ -1,8 +1,8 @@
 ﻿namespace Piatnashki_Game
 {
-    static class GameRunInfoPrinter
+    static class GamePrinter
     {
-        public static void PrintRunInfo(TimeSpan timeLeft, Board board, Settings settings)
+        public static void DrawGameScreen(TimeSpan timeLeft, Board board, Settings settings)
         {
             Console.Clear();
             Console.WriteLine("Time left: " + timeLeft.ToString(@"hh\:mm\:ss"));

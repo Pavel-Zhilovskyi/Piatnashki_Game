@@ -3,56 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\gameresultprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\gameresultprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\rules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\rules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\gamemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\gamemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\gameruninfoprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\gameruninfoprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\keyinputconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\keyinputconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\boardprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\boardprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\gameresultprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\gameresultprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\settingsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\settingsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\scorestorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\scorestorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\scoremenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\scoremenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\scoreboardprint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,16 +39,40 @@
       "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\settingsstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\settingsstorage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\rules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\rules.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\scoremenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\scoremenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\inputhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\keyinputconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\keyinputconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\gamerunprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\gamerunprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\gamemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\gamemenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\filepathhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\filepathhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\enum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\boardprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\boardprinter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|c:\\users\\pasha\\onedrive\\desktop\\c#\\piatnashki_game\\piatnashki_game\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E94AE39-7102-8C49-D518-12BF496205C7}|Piatnashki_Game\\Piatnashki_Game.csproj|solutionrelative:piatnashki_game\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -82,33 +82,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1055,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Program.cs",
               "RelativeDocumentMoniker": "Piatnashki_Game\\Program.cs",
               "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Program.cs",
               "RelativeToolTip": "Piatnashki_Game\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-03T21:52:09.728Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Game.cs",
               "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Game.cs",
               "RelativeDocumentMoniker": "Piatnashki_Game\\Game.cs",
               "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Game.cs",
               "RelativeToolTip": "Piatnashki_Game\\Game.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAkwB4AAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-11T10:17:39.739Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GameRunPrinter.cs",
+              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\GameRunPrinter.cs",
+              "RelativeDocumentMoniker": "Piatnashki_Game\\GameRunPrinter.cs",
+              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\GameRunPrinter.cs",
+              "RelativeToolTip": "Piatnashki_Game\\GameRunPrinter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T13:43:50.561Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "BoardPrinter.cs",
+              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\BoardPrinter.cs",
+              "RelativeDocumentMoniker": "Piatnashki_Game\\BoardPrinter.cs",
+              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\BoardPrinter.cs",
+              "RelativeToolTip": "Piatnashki_Game\\BoardPrinter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T10:37:26.029Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -118,190 +148,180 @@
               "RelativeDocumentMoniker": "Piatnashki_Game\\GameResultPrinter.cs",
               "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\GameResultPrinter.cs",
               "RelativeToolTip": "Piatnashki_Game\\GameResultPrinter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T13:55:31.702Z"
+              "WhenOpened": "2026-05-06T13:55:31.702Z",
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "GameRunInfoPrinter.cs",
-              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\GameRunInfoPrinter.cs",
-              "RelativeDocumentMoniker": "Piatnashki_Game\\GameRunInfoPrinter.cs",
-              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\GameRunInfoPrinter.cs",
-              "RelativeToolTip": "Piatnashki_Game\\GameRunInfoPrinter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "ScoreboardPrint.cs",
+              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreboardPrint.cs",
+              "RelativeDocumentMoniker": "Piatnashki_Game\\ScoreboardPrint.cs",
+              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreboardPrint.cs",
+              "RelativeToolTip": "Piatnashki_Game\\ScoreboardPrint.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T13:43:50.561Z"
+              "WhenOpened": "2026-05-05T14:36:19.759Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "GameMenu.cs",
-              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\GameMenu.cs",
-              "RelativeDocumentMoniker": "Piatnashki_Game\\GameMenu.cs",
-              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\GameMenu.cs",
-              "RelativeToolTip": "Piatnashki_Game\\GameMenu.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAqwCAAAAAeAAAAAAAAAA==",
+              "Title": "ScoreMenu.cs",
+              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreMenu.cs",
+              "RelativeDocumentMoniker": "Piatnashki_Game\\ScoreMenu.cs",
+              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreMenu.cs",
+              "RelativeToolTip": "Piatnashki_Game\\ScoreMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T12:13:14.285Z"
+              "WhenOpened": "2026-05-05T12:52:17.569Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
+              "Title": "ScoreStorage.cs",
+              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreStorage.cs",
+              "RelativeDocumentMoniker": "Piatnashki_Game\\ScoreStorage.cs",
+              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreStorage.cs",
+              "RelativeToolTip": "Piatnashki_Game\\ScoreStorage.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAYwFEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-27T14:40:22.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Settings.cs",
               "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Settings.cs",
               "RelativeDocumentMoniker": "Piatnashki_Game\\Settings.cs",
               "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Settings.cs",
               "RelativeToolTip": "Piatnashki_Game\\Settings.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAA4wBsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-21T14:27:02.152Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Enum.cs",
-              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Enum.cs",
-              "RelativeDocumentMoniker": "Piatnashki_Game\\Enum.cs",
-              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Enum.cs",
-              "RelativeToolTip": "Piatnashki_Game\\Enum.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-22T11:01:32.934Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Board.cs",
-              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Board.cs",
-              "RelativeDocumentMoniker": "Piatnashki_Game\\Board.cs",
-              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Board.cs",
-              "RelativeToolTip": "Piatnashki_Game\\Board.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAuwAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-20T14:18:08.617Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "BoardPrinter.cs",
-              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\BoardPrinter.cs",
-              "RelativeDocumentMoniker": "Piatnashki_Game\\BoardPrinter.cs",
-              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\BoardPrinter.cs",
-              "RelativeToolTip": "Piatnashki_Game\\BoardPrinter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T10:37:26.029Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Score.cs",
-              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Score.cs",
-              "RelativeDocumentMoniker": "Piatnashki_Game\\Score.cs",
-              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Score.cs",
-              "RelativeToolTip": "Piatnashki_Game\\Score.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-24T12:27:20.476Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "SettingsMenu.cs",
               "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\SettingsMenu.cs",
               "RelativeDocumentMoniker": "Piatnashki_Game\\SettingsMenu.cs",
               "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\SettingsMenu.cs",
               "RelativeToolTip": "Piatnashki_Game\\SettingsMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAYwHkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-29T13:18:34.802Z"
+              "WhenOpened": "2026-04-29T13:18:34.802Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
+              "Title": "Score.cs",
+              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Score.cs",
+              "RelativeDocumentMoniker": "Piatnashki_Game\\Score.cs",
+              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Score.cs",
+              "RelativeToolTip": "Piatnashki_Game\\Score.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-24T12:27:20.476Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Rules.cs",
               "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Rules.cs",
               "RelativeDocumentMoniker": "Piatnashki_Game\\Rules.cs",
               "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Rules.cs",
               "RelativeToolTip": "Piatnashki_Game\\Rules.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T10:46:50.469Z"
+              "WhenOpened": "2026-04-11T10:46:50.469Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "KeyInputConverter.cs",
               "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\KeyInputConverter.cs",
               "RelativeDocumentMoniker": "Piatnashki_Game\\KeyInputConverter.cs",
               "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\KeyInputConverter.cs",
               "RelativeToolTip": "Piatnashki_Game\\KeyInputConverter.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAA1wBUAAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAkwDUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-06T12:14:28.634Z"
+              "WhenOpened": "2026-05-06T12:14:28.634Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SettingsStorage.cs",
-              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\SettingsStorage.cs",
-              "RelativeDocumentMoniker": "Piatnashki_Game\\SettingsStorage.cs",
-              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\SettingsStorage.cs",
-              "RelativeToolTip": "Piatnashki_Game\\SettingsStorage.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-28T12:00:03.72Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ScoreStorage.cs",
-              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreStorage.cs",
-              "RelativeDocumentMoniker": "Piatnashki_Game\\ScoreStorage.cs",
-              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreStorage.cs",
-              "RelativeToolTip": "Piatnashki_Game\\ScoreStorage.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAIwAwAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-27T14:40:22.242Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "ScoreMenu.cs",
-              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreMenu.cs",
-              "RelativeDocumentMoniker": "Piatnashki_Game\\ScoreMenu.cs",
-              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreMenu.cs",
-              "RelativeToolTip": "Piatnashki_Game\\ScoreMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T12:52:17.569Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ScoreboardPrint.cs",
-              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreboardPrint.cs",
-              "RelativeDocumentMoniker": "Piatnashki_Game\\ScoreboardPrint.cs",
-              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\ScoreboardPrint.cs",
-              "RelativeToolTip": "Piatnashki_Game\\ScoreboardPrint.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T14:36:19.759Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 0,
               "Title": "InputHandler.cs",
               "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\InputHandler.cs",
               "RelativeDocumentMoniker": "Piatnashki_Game\\InputHandler.cs",
               "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\InputHandler.cs",
               "RelativeToolTip": "Piatnashki_Game\\InputHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowAwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T10:17:41.43Z"
+              "WhenOpened": "2026-04-11T10:17:41.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GameMenu.cs",
+              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\GameMenu.cs",
+              "RelativeDocumentMoniker": "Piatnashki_Game\\GameMenu.cs",
+              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\GameMenu.cs",
+              "RelativeToolTip": "Piatnashki_Game\\GameMenu.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAkwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-06T12:13:14.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FilePathHelper.cs",
+              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\FilePathHelper.cs",
+              "RelativeDocumentMoniker": "Piatnashki_Game\\FilePathHelper.cs",
+              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\FilePathHelper.cs",
+              "RelativeToolTip": "Piatnashki_Game\\FilePathHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-07T11:35:20.616Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Enum.cs",
+              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Enum.cs",
+              "RelativeDocumentMoniker": "Piatnashki_Game\\Enum.cs",
+              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Enum.cs",
+              "RelativeToolTip": "Piatnashki_Game\\Enum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-22T11:01:32.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Board.cs",
+              "DocumentMoniker": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Board.cs",
+              "RelativeDocumentMoniker": "Piatnashki_Game\\Board.cs",
+              "ToolTip": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Board.cs",
+              "RelativeToolTip": "Piatnashki_Game\\Board.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAAwMYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-20T14:18:08.617Z",
+              "EditorCaption": ""
             }
           ]
         }

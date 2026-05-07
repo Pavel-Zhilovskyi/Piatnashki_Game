@@ -4,6 +4,8 @@
     {
         private string filePath;
 
+        private SafeFileHelper safeFileHelper = new SafeFileHelper();
+
         public ScoreStorage()
         {
             filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
@@ -17,14 +19,7 @@
 
         public void WriteScoreFile(Score score)
         {
-            try
-            {
-                File.AppendAllText(filePath, ScoreToString(score) + "\n");
-            }
-            catch (IOException ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            safeFileHelper.Append(filePath, ScoreToString(score) + "\n");
         }
 
         public List<Score> ReadScoreFromFile()
@@ -69,14 +64,7 @@
 
         public void ClearScoreboardFile()
         {
-            try
-            {
-                File.WriteAllText(filePath, string.Empty);
-            }
-            catch (IOException ex)
-            {
-                Console.WriteLine(ex.Message + "\n");
-            }
+            safeFileHelper.Clear(filePath);
         }
     }
 }

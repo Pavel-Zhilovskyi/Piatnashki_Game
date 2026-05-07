@@ -17,7 +17,7 @@ namespace Piatnashki_Game
             {
                 TimeSpan timeLeft = timerLimit - stopwatch.Elapsed;
 
-                GameRunInfoPrinter.PrintRunInfo(timeLeft, board, settings);
+                GamePrinter.DrawGameScreen(timeLeft, board, settings);
 
                 if (Console.KeyAvailable)
                 {
@@ -25,17 +25,15 @@ namespace Piatnashki_Game
 
                     if (keyInfo.Key == ConsoleKey.Q)
                     {
-                        stopwatch.Stop();
-                        GameResultPrinter.PrintGameResult(GameResult.GiveUp);
+                        HandleGiveUp(stopwatch);
                         return;
                     }
 
                     Direction? direction = KeyInputConverter.ConvertKey(keyInfo, settings);
 
-                if (direction != null) {
+                    if (direction != null) {
                         if (board.MoveEmptyTile(direction))
                         {
-
                             if (board.IsSolved())
                             {
                                 stopwatch.Stop();
@@ -59,6 +57,12 @@ namespace Piatnashki_Game
                 Thread.Sleep(30);
             }
             GameResultPrinter.PrintGameResult(GameResult.Timeout);
+        }
+
+        private static void HandleGiveUp(Stopwatch stopwatch)
+        {
+            stopwatch.Stop();
+            GameResultPrinter.PrintGameResult(GameResult.GiveUp);
         }
     }
 }
