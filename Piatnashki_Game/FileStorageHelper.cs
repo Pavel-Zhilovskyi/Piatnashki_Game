@@ -2,7 +2,7 @@
 {
     internal class SafeFileHelper
     {
-        public static void SafeExecute(Action action)
+        private void SafeExecute(Action action)
         {
             try
             {
@@ -39,15 +39,25 @@
             });
         }
 
-        //public string[] ReadAllLines(string path)
-        //{
-        //    string[] lines;
-        //    SafeExecute(() =>
-        //    {
-        //        lines = File.ReadAllLines(path);
-        //    });
+        public string[] ReadAllLines(string path)
+        {
+            string[] lines = Array.Empty<string>();
+            try
+            {
+                lines = File.ReadAllLines(path);
+                return lines;
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Message + "\n");
+            }
 
-        //    return lines;
-        //}
+            return lines;
+        }
+
+        public bool IsExists(string path)
+        {
+            return File.Exists(path);
+        }
     }
 }

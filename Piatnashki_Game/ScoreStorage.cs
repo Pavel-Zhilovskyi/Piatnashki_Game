@@ -4,7 +4,7 @@
     {
         private string filePath;
 
-        private SafeFileHelper safeFileHelper = new SafeFileHelper();
+        private readonly SafeFileHelper safeFileHelper = new SafeFileHelper();
 
         public ScoreStorage()
         {
@@ -24,14 +24,14 @@
 
         public List<Score> ReadScoreFromFile()
         {
-            if (!File.Exists(filePath))
+            if (!safeFileHelper.IsExists(filePath))
             {
                 return new List<Score>();
             }
 
             List<Score> scores = new List<Score>();
 
-            string[] lines = File.ReadAllLines(filePath);
+            string[] lines = safeFileHelper.ReadAllLines(filePath);
             string[] parts;
 
             Score score;

@@ -4,7 +4,7 @@
     {
         private string filePath;
 
-        private SafeFileHelper safeFileHelper = new SafeFileHelper();
+        private readonly SafeFileHelper safeFileHelper = new SafeFileHelper();
 
         public SettingsStorage()
         {
@@ -14,12 +14,12 @@
 
         public Settings LoadSettingsFromFile()
         {
-            if (!File.Exists(filePath))
+            if (!safeFileHelper.IsExists(filePath))
             {
                 return new Settings();
             }
 
-            string[] lines = File.ReadAllLines(filePath);
+            string[] lines = safeFileHelper.ReadAllLines(filePath);
             string[] parts;
 
             Settings settings = new Settings();
