@@ -29,12 +29,24 @@
                 {
                     case ConsoleKey.D1:
                         Board board = new Board(4, 4);
-                        Game.Run(board, settings, scoreStorage, GameMode.Classic);
+                        Game game = new Game();
+                        game.Run(board, settings, scoreStorage, GameMode.Classic);
+
+                        if (AfterGameMenu.AfterGameChoiceMenu())
+                        {
+                            goto case ConsoleKey.D1;
+                        }
                         break;
 
                     case ConsoleKey.D2:
                         Board field = new Board(3, 3);
-                        Game.Run(field, settings, scoreStorage, GameMode.FastGame);
+                        Game match = new Game();
+                        match.Run(field, settings, scoreStorage, GameMode.FastGame);
+
+                        if (AfterGameMenu.AfterGameChoiceMenu())
+                        {
+                            goto case ConsoleKey.D2;
+                        }
                         break;
 
                     case ConsoleKey.D3:
@@ -42,7 +54,8 @@
                         break;
 
                     case ConsoleKey.D4:
-                        Rules.ShowRules();
+                        Rules rules = new Rules();
+                        RulesManager.ShowRules(rules.GetRules());
                         break;
 
                     case ConsoleKey.D5:

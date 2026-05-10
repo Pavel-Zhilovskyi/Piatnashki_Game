@@ -2,22 +2,30 @@
 
 namespace Piatnashki_Game
 {
-    static class Game
+    internal class Game
     {
-        public static void Run(Board board, Settings settings, ScoreStorage scoreStorage, GameMode mode)
+        private int movesCount;
+        private bool isFirstMove;
+
+        public Game()
+        {
+            movesCount = 0;
+            isFirstMove = true;
+        }
+
+        public void Run(Board board, Settings settings, ScoreStorage scoreStorage, GameMode mode)
         {
             string playerName = InputHandler.ReadNameInput();
             ConsoleKeyInfo keyInfo;
             TimeSpan timerLimit = settings.GetGameTimerMode(mode);
 
             Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
 
             while(stopwatch.Elapsed < timerLimit)
             {
                 TimeSpan timeLeft = timerLimit - stopwatch.Elapsed;
 
-                GamePrinter.DrawGameScreen(timeLeft, board, settings);
+                GamePrinter.DrawGameScreen(timeLeft, board, settings, movesCount);
 
                 if (Console.KeyAvailable)
                 {
@@ -34,6 +42,14 @@ namespace Piatnashki_Game
                     if (direction != null) {
                         if (board.MoveEmptyTile(direction))
                         {
+                            if (isFirstMove)
+                            {
+                                stopwatch.Start();
+                                SetIsFirstMoveFalse();
+                            }
+
+                            InreaseMovesCount();
+
                             if (board.IsSolved())
                             {
                                 stopwatch.Stop();
@@ -44,7 +60,7 @@ namespace Piatnashki_Game
 
                                 Console.Clear();
                                 BoardPrinter.ShowBoard(board);
-                                GameResultPrinter.PrintGameResult(GameResult.Win);
+                                GameResultPrinter.PrintGameResult(GameResult.Win, stopwatch.Elapsed, movesCount);
                                 return;
                             }
                         }
@@ -57,6 +73,16 @@ namespace Piatnashki_Game
                 Thread.Sleep(30);
             }
             GameResultPrinter.PrintGameResult(GameResult.Timeout);
+        }
+
+        private void InreaseMovesCount()
+        {
+            movesCount++;
+        }
+
+        private void SetIsFirstMoveFalse()
+        {
+            isFirstMove = false;
         }
 
         private static void HandleGiveUp(Stopwatch stopwatch)
