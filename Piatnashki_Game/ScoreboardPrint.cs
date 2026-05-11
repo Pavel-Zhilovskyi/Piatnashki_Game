@@ -6,15 +6,21 @@
         {
             Console.Clear();
 
-            foreach (Score score in scores)
+            if(scores.Count != 0)
             {
-                Thread.Sleep(300);
-                Console.WriteLine($"{score.name} {score.time.Hours} h {score.time.Minutes} min " +
-                    $"{score.time.Seconds} sec. Game mode: {score.mode}");
+                foreach (Score score in scores)
+                {
+                    Thread.Sleep(300);
+                    Console.WriteLine($"{score.name} {score.time.Hours} h {score.time.Minutes} min " +
+                        $"{score.time.Seconds} sec. Game mode: {score.mode}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("The scoreboard is empty");
             }
 
             Console.WriteLine();
-            Thread.Sleep(300);
         }
     }
 }
