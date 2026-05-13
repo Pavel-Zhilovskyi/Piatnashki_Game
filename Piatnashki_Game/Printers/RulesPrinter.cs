@@ -1,6 +1,6 @@
 ﻿namespace Piatnashki_Game
 {
-    static class RulesManager
+    static class RulesPrinter
     {
         public static void ShowRules(string[] rules)
         {

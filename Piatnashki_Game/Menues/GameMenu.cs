@@ -55,7 +55,7 @@
 
                     case ConsoleKey.D4:
                         Rules rules = new Rules();
-                        RulesManager.ShowRules(rules.GetRules());
+                        RulesPrinter.ShowRules(rules.GetRules());
                         break;
 
                     case ConsoleKey.D5:

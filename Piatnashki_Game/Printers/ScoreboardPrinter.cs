@@ -1,6 +1,6 @@
 ﻿namespace Piatnashki_Game
 {
-    static class ScoreboardPrint
+    static class ScoreboardPrinter
     {
         static public void ShowScoreboard(List<Score> scores)
         {
