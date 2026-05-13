@@ -13,7 +13,7 @@
             {
                 Console.WriteLine(count + ". " + rule);
                 count++;
-                Thread.Sleep(300);
+                Thread.Sleep(TimeSpan.FromSeconds(0.3));
             }
             Console.Write("\n");
         }

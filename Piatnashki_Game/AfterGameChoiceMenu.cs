@@ -12,10 +12,10 @@
 
             ConsoleKeyInfo keyInfo;
 
-            keyInfo = Console.ReadKey(true);
-
             do
             {
+                keyInfo = Console.ReadKey(true);
+
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.R:

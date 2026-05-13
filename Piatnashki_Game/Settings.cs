@@ -2,28 +2,31 @@
 {
     internal class Settings
     {
-        private ControlsSettings _controls = ControlsSettings.Arrows;
+        private const int defaultMinutesCount3x3 = 3;
+        private const int defaultMinutesCount4x4 = 7;
 
-        public ControlsSettings Controls
+        private ControlsSettings Controls = ControlsSettings.Arrows;
+
+        public ControlsSettings KeyControls
         {
-            get { return _controls; }
-            set { _controls = value; }
+            get { return Controls; }
+            set { Controls = value; }
         }
 
-        private TimeSpan _GameTime3x3 = new TimeSpan(0, 3, 0);
+        private TimeSpan GameTime3x3 = new TimeSpan(0, defaultMinutesCount3x3, 0);
 
         public TimeSpan Time3x3
         {
-            get { return _GameTime3x3; }
-            set { _GameTime3x3 = value; }
+            get { return GameTime3x3; }
+            set { GameTime3x3 = value; }
         }
 
-        private TimeSpan _GameTime4x4 = new TimeSpan(0, 7, 0);
+        private TimeSpan GameTime4x4 = new TimeSpan(0, defaultMinutesCount4x4, 0);
 
         public TimeSpan Time4x4
         {
-            get { return _GameTime4x4; }
-            set { _GameTime4x4 = value; }
+            get { return GameTime4x4; }
+            set { GameTime4x4 = value; }
         }
 
         public TimeSpan GetGameTimerMode(GameMode mode)

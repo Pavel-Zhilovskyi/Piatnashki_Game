@@ -7,7 +7,7 @@
         public Rules()
         {
             rules = new string[] { "The game board consists of a 4x4 grid.",
-                    "The board contains 15 numbered tiles and one empty space.",
+                    "The board contains 8 or 15 numbered tiles and one empty space.",
                     "At the start of the game, the tiles are placed in random order.",
                     "The player can move only a tile that is adjacent to the empty space.",
                     "Tiles can be moved up, down, left, or right.",

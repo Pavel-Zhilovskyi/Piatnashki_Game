@@ -92,7 +92,7 @@
                 Console.WriteLine("You can change the control keys, by choosing the needed option.");
                 Console.WriteLine("1 - WASD");
                 Console.WriteLine("2 - Arrows");
-                Console.WriteLine("Current controls: " + settings.Controls.ToString() + "\n");
+                Console.WriteLine("Current controls: " + settings.KeyControls.ToString() + "\n");
                 Console.WriteLine("Esc - Quit controls");
 
                 keyInfo = Console.ReadKey(true);
@@ -100,12 +100,12 @@
                 switch (keyInfo.Key)
                 {
                     case ConsoleKey.D1:
-                        settings.Controls = ControlsSettings.WASD;
+                        settings.KeyControls = ControlsSettings.WASD;
                         settingsManager.WriteSettingsFile(settings);
                         break;
 
                     case ConsoleKey.D2:
-                        settings.Controls = ControlsSettings.Arrows;
+                        settings.KeyControls = ControlsSettings.Arrows;
                         settingsManager.WriteSettingsFile(settings);
                         break;
 

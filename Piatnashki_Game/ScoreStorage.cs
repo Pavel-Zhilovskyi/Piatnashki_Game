@@ -14,7 +14,7 @@
 
         private string ScoreToString(Score score)
         {
-            return score.name + ";" + score.time.ToString(@"hh\:mm\:ss") + ";" + score.mode.ToString();
+            return score.Name + ";" + score.Time.ToString(@"hh\:mm\:ss") + ";" + score.Mode.ToString();
         }
 
         public void WriteScoreFile(Score score)

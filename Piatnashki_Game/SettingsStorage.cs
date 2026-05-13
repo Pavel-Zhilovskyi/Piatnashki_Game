@@ -37,7 +37,7 @@
                     case "Controls":
                         if (Enum.TryParse(parts[1], true, out ControlsSettings controls))
                         {
-                            settings.Controls = controls;
+                            settings.KeyControls = controls;
                         }
                         break;
 
@@ -61,7 +61,7 @@
 
         private string SettingsToString(Settings settings)
         {
-            return "Controls=" + settings.Controls.ToString() + "\n" + "Time4x4=" +
+            return "Controls=" + settings.KeyControls.ToString() + "\n" + "Time4x4=" +
                 settings.Time4x4.ToString(@"hh\:mm\:ss") + "\n" + "Time3x3=" + 
                     settings.Time3x3.ToString(@"hh\:mm\:ss");
         }

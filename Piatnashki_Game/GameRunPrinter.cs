@@ -9,7 +9,7 @@
             Console.WriteLine("Moves: " + movesCount);
             BoardPrinter.ShowBoard(board);
 
-            Console.WriteLine($"Use {settings.Controls} to move the empty tile.");
+            Console.WriteLine($"Use {settings.KeyControls} to move the empty tile.");
             Console.WriteLine("Q - Give up.");
         }
     }

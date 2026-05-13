@@ -4,7 +4,7 @@
     {
         public static Direction? ConvertKey(ConsoleKeyInfo keyInfo, Settings settings)
         {
-            switch (settings.Controls)
+            switch (settings.KeyControls)
             {
                 case ControlsSettings.WASD:
                     if (keyInfo.Key == ConsoleKey.W)
