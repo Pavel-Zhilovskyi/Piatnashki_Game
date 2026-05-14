@@ -1,4 +1,5 @@
-﻿namespace Piatnashki_Game
+﻿
+namespace Piatnashki_Game
 {
     static class GameMenu
     {
@@ -54,8 +55,8 @@
                         break;
 
                     case ConsoleKey.D4:
-                        Rules rules = new Rules();
-                        RulesPrinter.ShowRules(rules.GetRules());
+                        RulesStorage rulesStorage = new RulesStorage();
+                        RulesPrinter.ShowRules(rulesStorage.ReadRulesFromFile());
                         break;
 
                     case ConsoleKey.D5:
