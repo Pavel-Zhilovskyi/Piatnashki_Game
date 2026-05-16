@@ -1,6 +1,6 @@
 ﻿namespace Piatnashki_Game.Enums;
 
-public  enum GameResult
+public enum GameResult
 {
     Win,
     GiveUp,
