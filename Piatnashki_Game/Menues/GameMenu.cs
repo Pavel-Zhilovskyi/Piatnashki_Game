@@ -1,4 +1,6 @@
 ﻿
+using Piatnashki_Game.Enums;
+
 namespace Piatnashki_Game
 {
     static class GameMenu
