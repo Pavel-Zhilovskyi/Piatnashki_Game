@@ -1,4 +1,6 @@
-﻿namespace Piatnashki_Game
+﻿using Piatnashki_Game.Enums;
+
+namespace Piatnashki_Game
 {
     internal class Settings
     {
