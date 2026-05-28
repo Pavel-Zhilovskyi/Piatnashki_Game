@@ -1,31 +1,222 @@
-# Build folders
-obj/
+# =========================
+# Build results
+# =========================
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+Build/
+Debug/
+DebugPublic/
+Release/
+Releases/
 
+# =========================
 # Visual Studio
+# =========================
 .vs/
 *.user
-*.suo
 *.userosscache
+*.suo
 *.sln.docstates
+*.vcxproj.user
+*.csproj.user
+*.dbmdl
+*.opendb
+*.VC.db
+*.VC.VC.opendb
 
-# Rider / VS Code
+# =========================
+# Rider / JetBrains
+# =========================
 .idea/
+*.sln.iml
+
+# =========================
+# VS Code
+# =========================
 .vscode/
 
-# Logs
-*.log
-
-# OS files
-.DS_Store
-Thumbs.db
-desktop.ini
-
+# =========================
 # NuGet
+# =========================
 packages/
 *.nupkg
+*.snupkg
+.nuget/
 
-# Test results
-TestResults/
+# Keep build restore targets if needed
+!packages/build/
+!packages/repositories.config
 
-# Publish
+# =========================
+# .NET / C#
+# =========================
+*.cache
+*.ilk
+*.log
+*.pdb
+*.pidb
+*.svclog
+*.scc
+*.tmp
+*.temp
+*.bak
+*.backup
+*.orig
+
+# =========================
+# Test Results
+# =========================
+[Tt]est[Rr]esult*/
+[Bb]enchmark[Dd]ot[Nn]et.Artifacts/
+
+# =========================
+# Publish output
+# =========================
 publish/
+publish_output/
+app.publish/
+
+# =========================
+# Azure
+# =========================
+.csx/
+*.build.csdef
+
+# =========================
+# Entity Framework
+# =========================
+*.mdf
+*.ldf
+
+# =========================
+# Resharper
+# =========================
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# =========================
+# DotCover
+# =========================
+*.dotCover
+
+# =========================
+# NCrunch
+# =========================
+_NCrunch_*
+.*crunch*.local.xml
+nCrunchTemp_*
+
+# =========================
+# StyleCop
+# =========================
+StyleCopReport.xml
+
+# =========================
+# SQL Server files
+# =========================
+*.mdf
+*.ldf
+
+# =========================
+# Windows / OS files
+# =========================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# =========================
+# Node.js (если есть фронт)
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Generated files
+# =========================
+Generated\ Files/
+*.generated.cs
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+*.cache
+
+# =========================
+# Coverage reports
+# =========================
+coverage/
+*.coverage
+*.coveragexml
+
+# =========================
+# Docker
+# =========================
+docker-compose.override.yml
+
+# =========================
+# Secrets / Certificates
+# =========================
+*.pfx
+*.publishsettings
+secrets.json
+
+# =========================
+# SQLite
+# =========================
+*.db
+*.sqlite
+*.sqlite3
+
+# =========================
+# IIS Express
+# =========================
+.iis/
+
+# =========================
+# Profiling
+# =========================
+*.psess
+*.vsp
+*.vspx
+
+# =========================
+# Local history
+# =========================
+.localhistory/
+
+# =========================
+# Crash dumps
+# =========================
+*.dmp
+
+# =========================
+# Optional: ignore appsettings local
+# =========================
+appsettings.Development.json
+appsettings.Local.json

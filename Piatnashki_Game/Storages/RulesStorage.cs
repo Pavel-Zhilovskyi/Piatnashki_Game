@@ -1,4 +1,6 @@
-﻿namespace Piatnashki_Game
+﻿using Piatnashki_Game.Helpers;
+
+namespace Piatnashki_Game
 {
     internal class RulesStorage
     {

@@ -1,45 +1,44 @@
-﻿namespace Piatnashki_Game
+﻿namespace Piatnashki_Game;
+
+internal class InputHandler
 {
-    internal class InputHandler
+    public static string ReadNameInput()
     {
-        public static string ReadNameInput()
+        string name;
+        do
         {
-            string name;
-            do
+            Console.Write("Enter your nickname: ");
+            name = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(name) || name.Contains(';'))
             {
-                Console.Write("Enter your nickname: ");
-                name = Console.ReadLine();
+                Console.WriteLine("\nEnter your valid nickname!");
+            }
+            else
+            {
+                break;
+            }
+        } while (true);
+        return name;
+    }
 
-                if (string.IsNullOrWhiteSpace(name) || name.Contains(';'))
-                {
-                    Console.WriteLine("\nEnter your valid nickname!");
-                }
-                else
-                {
-                    break;
-                }
-            } while (true);
-            return name;
-        }
-
-        public static TimeSpan ReadTimerInput()
+    public static TimeSpan ReadTimerInput()
+    {
+        string time;
+        do
         {
-            string time;
-            do
-            {
-                Console.WriteLine("Enter the time (hh:mm:ss)");
-                time = Console.ReadLine();
+            Console.WriteLine("Enter the time (hh:mm:ss)");
+            time = Console.ReadLine();
 
-                if (TimeSpan.TryParse(time, out TimeSpan result) && time.Length == 8)
-                {
-                    return result;
-                }
-                else
-                {
-                    Console.Beep();
-                    Console.WriteLine("Enter valid time format!\n");
-                }
-            } while (true);
-        }
+            if (TimeSpan.TryParse(time, out TimeSpan result) && time.Length == 8)
+            {
+                return result;
+            }
+            else
+            {
+                Console.Beep();
+                Console.WriteLine("Enter valid time format!\n");
+            }
+        } while (true);
     }
 }

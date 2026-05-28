@@ -1,3 +1,0 @@
-Controls=Arrows
-Time4x4=00:06:00
-Time3x3=00:03:00

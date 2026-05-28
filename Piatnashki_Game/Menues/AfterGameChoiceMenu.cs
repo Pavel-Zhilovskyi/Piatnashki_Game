@@ -1,41 +1,40 @@
-﻿namespace Piatnashki_Game
+﻿namespace Piatnashki_Game.Menues;
+
+static class AfterGameMenu
 {
-    static class AfterGameMenu
+    public static bool AfterGameChoiceMenu()
     {
-        public static bool AfterGameChoiceMenu()
+        Game game = new Game();
+
+        Console.WriteLine("Restart the game - R");
+        Console.WriteLine("Return to the main menu - M");
+        Console.WriteLine("Quit the game - Q");
+
+        ConsoleKeyInfo keyInfo;
+
+        do
         {
-            Game game = new Game();
+            keyInfo = Console.ReadKey(true);
 
-            Console.WriteLine("Restart the game - R");
-            Console.WriteLine("Return to the main menu - M");
-            Console.WriteLine("Quit the game - Q");
-
-            ConsoleKeyInfo keyInfo;
-
-            do
+            switch (keyInfo.Key)
             {
-                keyInfo = Console.ReadKey(true);
+                case ConsoleKey.R:
+                    return true;
 
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.R:
-                        return true;
+                case ConsoleKey.M:
+                    Console.Clear();
+                    return false;
 
-                    case ConsoleKey.M:
-                        Console.Clear();
-                        return false;
+                case ConsoleKey.Q:
+                    Console.WriteLine("\nBYE!");
+                    break;
 
-                    case ConsoleKey.Q:
-                        Console.WriteLine("\nBYE!");
-                        break;
-
-                    default:
-                        Console.Beep();
-                        break;
-                }
-            } while (keyInfo.Key != ConsoleKey.Q);
-            Environment.Exit(0);
-            return false;
-        }
+                default:
+                    Console.Beep();
+                    break;
+            }
+        } while (keyInfo.Key != ConsoleKey.Q);
+        Environment.Exit(0);
+        return false;
     }
 }

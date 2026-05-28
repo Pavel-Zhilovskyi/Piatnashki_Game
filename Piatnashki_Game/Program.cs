@@ -1,10 +1,11 @@
-﻿namespace Piatnashki_Game
+﻿using Piatnashki_Game.Menues;
+
+namespace Piatnashki_Game;
+
+class Program
 {
-    class Program
+    static void Main()
     {
-        static void Main()
-        {
-            GameMenu.Menu();
-        }
+        GameMenu.Menu();
     }
 }
