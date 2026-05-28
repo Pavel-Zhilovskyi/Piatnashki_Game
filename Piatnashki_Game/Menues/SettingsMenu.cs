@@ -1,123 +1,122 @@
 ﻿using Piatnashki_Game.Enums;
 
-namespace Piatnashki_Game
+namespace Piatnashki_Game;
+
+internal class SettingsMenu
 {
-    internal class SettingsMenu
+    public void SettingsGeneralMenu(Settings settings, SettingsStorage settingsManager)
     {
-        public void SettingsGeneralMenu(Settings settings, SettingsStorage settingsManager)
+        ConsoleKeyInfo keyInfo;
+
+        while (true)
         {
-            ConsoleKeyInfo keyInfo;
+            Console.Clear();
 
-            while (true)
+            Console.WriteLine("SETTINGS\n");
+            Console.WriteLine("1 - Controls");
+            Console.WriteLine("2 - Timer settings");
+            Console.WriteLine("Esc - Quit settings");
+
+            keyInfo = Console.ReadKey(true);
+
+            switch (keyInfo.Key)
             {
-                Console.Clear();
+                case ConsoleKey.D1:
+                    ControlsMenu(settings, settingsManager);
+                    break;
 
-                Console.WriteLine("SETTINGS\n");
-                Console.WriteLine("1 - Controls");
-                Console.WriteLine("2 - Timer settings");
-                Console.WriteLine("Esc - Quit settings");
+                case ConsoleKey.D2:
+                    TimerMenu(settings, settingsManager);
+                    break;
 
-                keyInfo = Console.ReadKey(true);
+                case ConsoleKey.Escape:
+                    Console.Clear();
+                    return;
 
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.D1:
-                        ControlsMenu(settings, settingsManager);
-                        break;
-
-                    case ConsoleKey.D2:
-                        TimerMenu(settings, settingsManager);
-                        break;
-
-                    case ConsoleKey.Escape:
-                        Console.Clear();
-                        return;
-
-                    default:
-                        Console.Beep();
-                        break;
-                }
+                default:
+                    Console.Beep();
+                    break;
             }
         }
+    }
 
-        private void TimerMenu(Settings settings, SettingsStorage settingsManager)
+    private void TimerMenu(Settings settings, SettingsStorage settingsManager)
+    {
+        ConsoleKeyInfo keyInfo;
+
+        while (true)
         {
-            ConsoleKeyInfo keyInfo;
+            Console.Clear();
 
-            while (true)
+            Console.WriteLine("TIMER\n");
+            Console.WriteLine("You can change the timer time, by choosing the needed option.\n");
+            Console.WriteLine("1 - Set timer for Classic 4x4 game");
+            Console.WriteLine("2 - Set timer for Fast 3x3 game\n");
+            Console.WriteLine("Current timer time for Classic game: " + settings.Time4x4.ToString());
+            Console.WriteLine("Current timer time for Fast game: " + settings.Time3x3.ToString() + "\n");
+            Console.WriteLine("Esc - Quit timer settings");
+
+            keyInfo = Console.ReadKey(true);
+
+            switch (keyInfo.Key)
             {
-                Console.Clear();
+                case ConsoleKey.D1:
+                    Console.Clear();
+                    settings.Time4x4 = InputHandler.ReadTimerInput();
+                    settingsManager.WriteSettingsFile(settings);
+                    break;
 
-                Console.WriteLine("TIMER\n");
-                Console.WriteLine("You can change the timer time, by choosing the needed option.\n");
-                Console.WriteLine("1 - Set timer for Classic 4x4 game");
-                Console.WriteLine("2 - Set timer for Fast 3x3 game\n");
-                Console.WriteLine("Current timer time for Classic game: " + settings.Time4x4.ToString());
-                Console.WriteLine("Current timer time for Fast game: " + settings.Time3x3.ToString() + "\n");
-                Console.WriteLine("Esc - Quit timer settings");
+                case ConsoleKey.D2:
+                    Console.Clear();
+                    settings.Time3x3 = InputHandler.ReadTimerInput();
+                    settingsManager.WriteSettingsFile(settings);
+                    break;
 
-                keyInfo = Console.ReadKey(true);
+                case ConsoleKey.Escape:
+                    return;
 
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.D1:
-                        Console.Clear();
-                        settings.Time4x4 = InputHandler.ReadTimerInput();
-                        settingsManager.WriteSettingsFile(settings);
-                        break;
-
-                    case ConsoleKey.D2:
-                        Console.Clear();
-                        settings.Time3x3 = InputHandler.ReadTimerInput();
-                        settingsManager.WriteSettingsFile(settings);
-                        break;
-
-                    case ConsoleKey.Escape:
-                        return;
-
-                    default:
-                        Console.Beep();
-                        break;
-                }
+                default:
+                    Console.Beep();
+                    break;
             }
         }
+    }
 
-        private void ControlsMenu(Settings settings, SettingsStorage settingsManager)
+    private void ControlsMenu(Settings settings, SettingsStorage settingsManager)
+    {
+        ConsoleKeyInfo keyInfo;
+
+        while (true)
         {
-            ConsoleKeyInfo keyInfo;
+            Console.Clear();
 
-            while (true)
+            Console.WriteLine("CONTROLS\n");
+            Console.WriteLine("You can change the control keys, by choosing the needed option.");
+            Console.WriteLine("1 - WASD");
+            Console.WriteLine("2 - Arrows");
+            Console.WriteLine("Current controls: " + settings.KeyControls.ToString() + "\n");
+            Console.WriteLine("Esc - Quit controls");
+
+            keyInfo = Console.ReadKey(true);
+
+            switch (keyInfo.Key)
             {
-                Console.Clear();
+                case ConsoleKey.D1:
+                    settings.KeyControls = ControlsSettings.WASD;
+                    settingsManager.WriteSettingsFile(settings);
+                    break;
 
-                Console.WriteLine("CONTROLS\n");
-                Console.WriteLine("You can change the control keys, by choosing the needed option.");
-                Console.WriteLine("1 - WASD");
-                Console.WriteLine("2 - Arrows");
-                Console.WriteLine("Current controls: " + settings.KeyControls.ToString() + "\n");
-                Console.WriteLine("Esc - Quit controls");
+                case ConsoleKey.D2:
+                    settings.KeyControls = ControlsSettings.Arrows;
+                    settingsManager.WriteSettingsFile(settings);
+                    break;
 
-                keyInfo = Console.ReadKey(true);
+                case ConsoleKey.Escape:
+                    return;
 
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.D1:
-                        settings.KeyControls = ControlsSettings.WASD;
-                        settingsManager.WriteSettingsFile(settings);
-                        break;
-
-                    case ConsoleKey.D2:
-                        settings.KeyControls = ControlsSettings.Arrows;
-                        settingsManager.WriteSettingsFile(settings);
-                        break;
-
-                    case ConsoleKey.Escape:
-                        return;
-
-                    default:
-                        Console.Beep();
-                        break;
-                }
+                default:
+                    Console.Beep();
+                    break;
             }
         }
     }
