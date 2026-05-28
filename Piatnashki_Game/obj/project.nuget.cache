@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gzgBEmkEFTY=",
+  "dgSpecHash": "mAWIKgvguD4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Piatnashki_Game.csproj",
+  "projectFilePath": "C:\\Users\\pasha\\OneDrive\\Desktop\\c##\\Piatnashki_Game\\Piatnashki_Game\\Piatnashki_Game.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pasha\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.23.0\\microsoft.visualstudio.azure.containers.tools.targets.1.23.0.nupkg.sha512"
   ],

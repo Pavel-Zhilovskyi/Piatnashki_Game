@@ -105,11 +105,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Piatnashki_Game.csproj",
+      "projectUniqueName": "C:\\Users\\pasha\\OneDrive\\Desktop\\c##\\Piatnashki_Game\\Piatnashki_Game\\Piatnashki_Game.csproj",
       "projectName": "Piatnashki_Game",
-      "projectPath": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\Piatnashki_Game.csproj",
+      "projectPath": "C:\\Users\\pasha\\OneDrive\\Desktop\\c##\\Piatnashki_Game\\Piatnashki_Game\\Piatnashki_Game.csproj",
       "packagesPath": "C:\\Users\\pasha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pasha\\OneDrive\\Desktop\\C#\\Piatnashki_Game\\Piatnashki_Game\\obj\\",
+      "outputPath": "C:\\Users\\pasha\\OneDrive\\Desktop\\c##\\Piatnashki_Game\\Piatnashki_Game\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
