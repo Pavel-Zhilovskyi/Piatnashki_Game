@@ -1,4 +1,4 @@
-﻿namespace Piatnashki_Game.Enums;
+﻿namespace PiatnashkiGame.Enums;
 
 public enum GameResult
 {

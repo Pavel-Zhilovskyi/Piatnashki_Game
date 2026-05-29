@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "Piatnashki_Game": {
+    "PiatnashkiGame": {
       "commandName": "Project"
     },
     "Container (Dockerfile)": {

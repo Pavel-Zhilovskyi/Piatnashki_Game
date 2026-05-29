@@ -1,26 +1,26 @@
-﻿namespace Piatnashki_Game
+﻿using PiatnashkiGame.Points;
+
+namespace PiatnashkiGame.Printers;
+static class ScoreboardPrinter
 {
-    static class ScoreboardPrinter
+    static public void ShowScoreboard(List<Score> scores)
     {
-        static public void ShowScoreboard(List<Score> scores)
+        Console.Clear();
+
+        if(scores.Count != 0)
         {
-            Console.Clear();
-
-            if(scores.Count != 0)
+            foreach (Score score in scores)
             {
-                foreach (Score score in scores)
-                {
-                    Thread.Sleep(300);
-                    Console.WriteLine($"{score.Name} {score.Time.Hours} h {score.Time.Minutes} min " +
-                        $"{score.Time.Seconds} sec. Game mode: {score.Mode}");
-                }
+                Thread.Sleep(300);
+                Console.WriteLine($"{score.Name} {score.Time.Hours} h {score.Time.Minutes} min " +
+                    $"{score.Time.Seconds} sec. Game mode: {score.Mode}");
             }
-            else
-            {
-                Console.WriteLine("The scoreboard is empty");
-            }
-
-            Console.WriteLine();
         }
+        else
+        {
+            Console.WriteLine("The scoreboard is empty");
+        }
+
+        Console.WriteLine();
     }
 }

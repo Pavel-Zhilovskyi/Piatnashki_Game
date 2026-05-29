@@ -1,76 +1,77 @@
-﻿using Piatnashki_Game.Enums;
+﻿using PiatnashkiGame.Enums;
+using PiatnashkiGame.Helpers;
+using PiatnashkiGame.Options;
 
-namespace Piatnashki_Game
+namespace PiatnashkiGame.Storages;
+
+internal class SettingsStorage
 {
-    internal class SettingsStorage
+    private string filePath;
+
+    private readonly SafeFileHelper safeFileHelper = new SafeFileHelper();
+
+    public SettingsStorage()
     {
-        private string filePath;
+        filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
+            "PiatnashkiGameSettings", "Settings");
+    }
 
-        private readonly SafeFileHelper safeFileHelper = new SafeFileHelper();
-
-        public SettingsStorage()
+    public Settings LoadSettingsFromFile()
+    {
+        if (!safeFileHelper.IsExists(filePath))
         {
-            filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
-                "Piatnashki_Game_Settings", "Settings");
+            return new Settings();
         }
 
-        public Settings LoadSettingsFromFile()
+        string[] lines = safeFileHelper.ReadAllLines(filePath);
+        string[] parts;
+
+        Settings settings = new Settings();
+
+        for (int i = 0; i < lines.Length; i++) 
         {
-            if (!safeFileHelper.IsExists(filePath))
+            parts = lines[i].Split('=');
+
+            if(parts.Length != 2)
             {
-                return new Settings();
+                continue;
             }
-
-            string[] lines = safeFileHelper.ReadAllLines(filePath);
-            string[] parts;
-
-            Settings settings = new Settings();
-
-            for (int i = 0; i < lines.Length; i++) 
+            switch (parts[0])
             {
-                parts = lines[i].Split('=');
+                case "Controls":
+                    if (Enum.TryParse(parts[1], true, out ControlsSettings controls))
+                    {
+                        settings.KeyControls = controls;
+                    }
+                    break;
 
-                if(parts.Length != 2)
-                {
-                    continue;
-                }
-                switch (parts[0])
-                {
-                    case "Controls":
-                        if (Enum.TryParse(parts[1], true, out ControlsSettings controls))
-                        {
-                            settings.KeyControls = controls;
-                        }
-                        break;
+                case "Time4x4":
+                    if (TimeSpan.TryParse(parts[1], out TimeSpan time))
+                    {
+                        settings.Time4x4 = time;
+                    }
+                    break;
 
-                    case "Time4x4":
-                        if (TimeSpan.TryParse(parts[1], out TimeSpan time))
-                        {
-                            settings.Time4x4 = time;
-                        }
-                        break;
-
-                    case "Time3x3":
-                        if (TimeSpan.TryParse(parts[1], out TimeSpan timer))
-                        {
-                            settings.Time3x3 = timer;
-                        }
-                        break;
-                }
+                case "Time3x3":
+                    if (TimeSpan.TryParse(parts[1], out TimeSpan timer))
+                    {
+                        settings.Time3x3 = timer;
+                    }
+                    break;
             }
-            return settings;
         }
+        return settings;
+    }
 
-        private string SettingsToString(Settings settings)
-        {
-            return "Controls=" + settings.KeyControls.ToString() + "\n" + "Time4x4=" +
-                settings.Time4x4.ToString(@"hh\:mm\:ss") + "\n" + "Time3x3=" + 
-                    settings.Time3x3.ToString(@"hh\:mm\:ss");
-        }
+    private string SettingsToString(Settings settings)
+    {
+        return "Controls=" + settings.KeyControls.ToString() + "\n" + "Time4x4=" +
+            settings.Time4x4.ToString(@"hh\:mm\:ss") + "\n" + "Time3x3=" + 
+                settings.Time3x3.ToString(@"hh\:mm\:ss");
+    }
 
-        public void WriteSettingsFile(Settings settings)
-        {
-            safeFileHelper.Write(filePath, SettingsToString(settings) + "\n");
-        }
+    public void WriteSettingsFile(Settings settings)
+    {
+        safeFileHelper.Write(filePath, SettingsToString(settings) + "\n");
     }
 }

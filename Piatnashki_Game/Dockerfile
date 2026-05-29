@@ -12,19 +12,19 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:10.0-nanoserver-ltsc2022 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Piatnashki_Game/Piatnashki_Game.csproj", "Piatnashki_Game/"]
-RUN dotnet restore "./Piatnashki_Game/Piatnashki_Game.csproj"
+COPY ["PiatnashkiGame/PiatnashkiGame.csproj", "PiatnashkiGame/"]
+RUN dotnet restore "./PiatnashkiGame/PiatnashkiGame.csproj"
 COPY . .
-WORKDIR "/src/Piatnashki_Game"
-RUN dotnet build "./Piatnashki_Game.csproj" -c %BUILD_CONFIGURATION% -o /app/build
+WORKDIR "/src/PiatnashkiGame"
+RUN dotnet build "./PiatnashkiGame.csproj" -c %BUILD_CONFIGURATION% -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Piatnashki_Game.csproj" -c %BUILD_CONFIGURATION% -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./PiatnashkiGame.csproj" -c %BUILD_CONFIGURATION% -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Piatnashki_Game.dll"]
+ENTRYPOINT ["dotnet", "PiatnashkiGame.dll"]

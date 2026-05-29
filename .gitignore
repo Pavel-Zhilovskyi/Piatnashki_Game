@@ -1,32 +1,127 @@
-# Build folders
-bin/
-obj/
+# =========================
+# Build results
+# =========================
+[Bb]in/
+[Oo]bj/
+[Ll]og/
 
+# =========================
 # Visual Studio
+# =========================
 .vs/
 *.user
 *.suo
 *.userosscache
 *.sln.docstates
 
-# Rider / VS Code
+# =========================
+# Rider / JetBrains
+# =========================
 .idea/
+
+# =========================
+# ReSharper
+# =========================
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# =========================
+# NuGet
+# =========================
+packages/
+*.nupkg
+*.snupkg
+
+# except build targets
+!packages/build/
+
+# =========================
+# Publish
+# =========================
+publish/
+
+# =========================
+# Azure
+# =========================
+PublishProfiles/
+*.azurePubxml
+
+# =========================
+# Test Results
+# =========================
+[Tt]est[Rr]esult*/
+*.trx
+
+# =========================
+# VS Code
+# =========================
 .vscode/
 
-# Logs
-*.log
-
+# =========================
 # OS files
+# =========================
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# NuGet
-packages/
-*.nupkg
+# =========================
+# Logs
+# =========================
+*.log
 
-# Test results
-TestResults/
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
 
-# Publish
-publish/
+# =========================
+# DotCover
+# =========================
+*.dotCover
+
+# =========================
+# NUnit
+# =========================
+*.VisualState.xml
+TestResult.xml
+
+# =========================
+# Coverage
+# =========================
+coverage/
+*.coverage
+*.coveragexml
+
+# =========================
+# SQLite
+# =========================
+*.db
+*.sqlite
+
+# =========================
+# Backup files
+# =========================
+*.bak
+*.backup
+*.old
+
+# =========================
+# Generated files
+# =========================
+Generated_Code/
+
+# =========================
+# OneDrive temp
+# =========================
+~$*
+
+# =========================
+# Secrets / local configs
+# =========================
+appsettings.Development.json
+secrets.json
+
+*.txt
+!Rules.txt
