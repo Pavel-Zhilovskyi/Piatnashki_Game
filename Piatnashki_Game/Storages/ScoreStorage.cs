@@ -1,72 +1,72 @@
 ﻿using Piatnashki_Game.Enums;
-using Piatnashki_Game.Helpers;
 
-namespace Piatnashki_Game;
-
-internal class ScoreStorage
+namespace Piatnashki_Game
 {
-    private string filePath;
-
-    private readonly SafeFileHelper safeFileHelper = new SafeFileHelper();
-
-    public ScoreStorage()
+    internal class ScoreStorage
     {
-        filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
-            "Piatnashki_Game_Score", "Score");
-    }
+        private string filePath;
 
-    private string ScoreToString(Score score)
-    {
-        return score.Name + ";" + score.Time.ToString(@"hh\:mm\:ss") + ";" + score.Mode.ToString();
-    }
+        private readonly SafeFileHelper safeFileHelper = new SafeFileHelper();
 
-    public void WriteScoreFile(Score score)
-    {
-        safeFileHelper.Append(filePath, ScoreToString(score) + "\n");
-    }
-
-    public List<Score> ReadScoreFromFile()
-    {
-        if (!safeFileHelper.IsExists(filePath))
+        public ScoreStorage()
         {
-            return new List<Score>();
+            filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
+                "Piatnashki_Game_Score", "Score");
         }
 
-        List<Score> scores = new List<Score>();
-
-        string[] lines = safeFileHelper.ReadAllLines(filePath);
-        string[] parts;
-
-        Score score;
-
-        foreach(string line in lines) 
+        private string ScoreToString(Score score)
         {
-            parts = line.Split(';');
-
-            if (parts.Length != 3)
-            {
-                continue;
-            } 
-            else if(!TimeSpan.TryParse(parts[1], out TimeSpan time))  
-            {
-                continue;
-            }
-            else if(!Enum.TryParse(parts[2], true, out GameMode mode))
-            {
-                continue;
-            }
-            else
-            {
-                score = new Score(parts[0], time, mode);
-            }
-
-            scores.Add(score);
+            return score.Name + ";" + score.Time.ToString(@"hh\:mm\:ss") + ";" + score.Mode.ToString();
         }
-        return scores;
-    }
 
-    public void ClearScoreboardFile()
-    {
-        safeFileHelper.Clear(filePath);
+        public void WriteScoreFile(Score score)
+        {
+            safeFileHelper.Append(filePath, ScoreToString(score) + "\n");
+        }
+
+        public List<Score> ReadScoreFromFile()
+        {
+            if (!safeFileHelper.IsExists(filePath))
+            {
+                return new List<Score>();
+            }
+
+            List<Score> scores = new List<Score>();
+
+            string[] lines = safeFileHelper.ReadAllLines(filePath);
+            string[] parts;
+
+            Score score;
+
+            foreach(string line in lines) 
+            {
+                parts = line.Split(';');
+
+                if (parts.Length != 3)
+                {
+                    continue;
+                } 
+                else if(!TimeSpan.TryParse(parts[1], out TimeSpan time))  
+                {
+                    continue;
+                }
+                else if(!Enum.TryParse(parts[2], true, out GameMode mode))
+                {
+                    continue;
+                }
+                else
+                {
+                    score = new Score(parts[0], time, mode);
+                }
+
+                scores.Add(score);
+            }
+            return scores;
+        }
+
+        public void ClearScoreboardFile()
+        {
+            safeFileHelper.Clear(filePath);
+        }
     }
 }

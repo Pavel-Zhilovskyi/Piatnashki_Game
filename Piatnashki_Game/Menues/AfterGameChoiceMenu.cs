@@ -1,40 +1,41 @@
-﻿namespace Piatnashki_Game.Menues;
-
-static class AfterGameMenu
+﻿namespace Piatnashki_Game
 {
-    public static bool AfterGameChoiceMenu()
+    static class AfterGameMenu
     {
-        Game game = new Game();
-
-        Console.WriteLine("Restart the game - R");
-        Console.WriteLine("Return to the main menu - M");
-        Console.WriteLine("Quit the game - Q");
-
-        ConsoleKeyInfo keyInfo;
-
-        do
+        public static bool AfterGameChoiceMenu()
         {
-            keyInfo = Console.ReadKey(true);
+            Game game = new Game();
 
-            switch (keyInfo.Key)
+            Console.WriteLine("Restart the game - R");
+            Console.WriteLine("Return to the main menu - M");
+            Console.WriteLine("Quit the game - Q");
+
+            ConsoleKeyInfo keyInfo;
+
+            do
             {
-                case ConsoleKey.R:
-                    return true;
+                keyInfo = Console.ReadKey(true);
 
-                case ConsoleKey.M:
-                    Console.Clear();
-                    return false;
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.R:
+                        return true;
 
-                case ConsoleKey.Q:
-                    Console.WriteLine("\nBYE!");
-                    break;
+                    case ConsoleKey.M:
+                        Console.Clear();
+                        return false;
 
-                default:
-                    Console.Beep();
-                    break;
-            }
-        } while (keyInfo.Key != ConsoleKey.Q);
-        Environment.Exit(0);
-        return false;
+                    case ConsoleKey.Q:
+                        Console.WriteLine("\nBYE!");
+                        break;
+
+                    default:
+                        Console.Beep();
+                        break;
+                }
+            } while (keyInfo.Key != ConsoleKey.Q);
+            Environment.Exit(0);
+            return false;
+        }
     }
 }

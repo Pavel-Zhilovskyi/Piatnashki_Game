@@ -1,62 +1,63 @@
-﻿namespace Piatnashki_Game.Helpers;
-
-internal class SafeFileHelper
+﻿namespace Piatnashki_Game
 {
-    private void SafeExecute(Action action)
+    internal class SafeFileHelper
     {
-        try
+        private void SafeExecute(Action action)
         {
-            action();
+            try
+            {
+                action();
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Message + "\n");
+            }
         }
-        catch (IOException ex)
+        
+        public void Append(string path, string text)
         {
-            Console.WriteLine(ex.Message + "\n");
+            SafeExecute(() =>
+            {
+                File.AppendAllText(path, text);
+            });
+                
         }
-    }
 
-    public void Append(string path, string text)
-    {
-        SafeExecute(() =>
+        public void Write(string path, string text)
         {
-            File.AppendAllText(path, text);
-        });
+            SafeExecute(() =>
+            {
+                File.WriteAllText(path, text);
+            });
+        }
 
-    }
-
-    public void Write(string path, string text)
-    {
-        SafeExecute(() =>
+        public void Clear(string path)
         {
-            File.WriteAllText(path, text);
-        });
-    }
+            SafeExecute(() =>
+            {
+                File.WriteAllText(path, string.Empty);
+            });
+        }
 
-    public void Clear(string path)
-    {
-        SafeExecute(() =>
+        public string[] ReadAllLines(string path)
         {
-            File.WriteAllText(path, string.Empty);
-        });
-    }
+            string[] lines = Array.Empty<string>();
+            try
+            {
+                lines = File.ReadAllLines(path);
+                return lines;
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Message + "\n");
+            }
 
-    public string[] ReadAllLines(string path)
-    {
-        string[] lines = Array.Empty<string>();
-        try
-        {
-            lines = File.ReadAllLines(path);
             return lines;
         }
-        catch (IOException ex)
+
+        public bool IsExists(string path)
         {
-            Console.WriteLine(ex.Message + "\n");
+            return File.Exists(path);
         }
-
-        return lines;
-    }
-
-    public bool IsExists(string path)
-    {
-        return File.Exists(path);
     }
 }
