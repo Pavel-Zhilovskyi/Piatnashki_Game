@@ -1,80 +1,78 @@
-﻿
-using Piatnashki_Game.Enums;
+﻿using Piatnashki_Game.Enums;
 
-namespace Piatnashki_Game
+namespace Piatnashki_Game.Menues;
+
+static class GameMenu
 {
-    static class GameMenu
+    public static void Menu()
     {
-        public static void Menu()
+        SettingsStorage settingsStorage = new SettingsStorage();
+        Settings settings = settingsStorage.LoadSettingsFromFile();
+        SettingsMenu settingsMenu = new SettingsMenu();
+        ScoreStorage scoreStorage = new ScoreStorage();
+        ScoreMenu scoreMenu = new ScoreMenu();
+
+        ConsoleKeyInfo keyInfo;
+
+        do
         {
-            SettingsStorage settingsStorage = new SettingsStorage();
-            Settings settings = settingsStorage.LoadSettingsFromFile();
-            SettingsMenu settingsMenu = new SettingsMenu();
-            ScoreStorage scoreStorage = new ScoreStorage();
-            ScoreMenu scoreMenu = new ScoreMenu();
+            Console.WriteLine("Fifteen Puzzle\n");
+            Console.WriteLine("1 - Play (4x4 board)");
+            Console.WriteLine("2 - Fast game (3x3 board)");
+            Console.WriteLine("3 - Scoreboard");
+            Console.WriteLine("4 - See rules");
+            Console.WriteLine("5 - Settings");
+            Console.WriteLine("Esc - Exit");
+            Console.WriteLine("Press the key to choose.\n");
 
-            ConsoleKeyInfo keyInfo;
+            keyInfo = Console.ReadKey(true);
 
-            do
+            switch (keyInfo.Key)
             {
-                Console.WriteLine("Fifteen Puzzle\n");
-                Console.WriteLine("1 - Play (4x4 board)");
-                Console.WriteLine("2 - Fast game (3x3 board)");
-                Console.WriteLine("3 - Scoreboard");
-                Console.WriteLine("4 - See rules");
-                Console.WriteLine("5 - Settings");
-                Console.WriteLine("Esc - Exit");
-                Console.WriteLine("Press the key to choose.\n");
+                case ConsoleKey.D1:
+                    Board board = new Board(4, 4);
+                    Game game = new Game();
+                    game.Run(board, settings, scoreStorage, GameMode.Classic);
 
-                keyInfo = Console.ReadKey(true);
+                    if (AfterGameMenu.AfterGameChoiceMenu())
+                    {
+                        goto case ConsoleKey.D1;
+                    }
+                    break;
 
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.D1:
-                        Board board = new Board(4, 4);
-                        Game game = new Game();
-                        game.Run(board, settings, scoreStorage, GameMode.Classic);
+                case ConsoleKey.D2:
+                    Board field = new Board(3, 3);
+                    Game match = new Game();
+                    match.Run(field, settings, scoreStorage, GameMode.FastGame);
 
-                        if (AfterGameMenu.AfterGameChoiceMenu())
-                        {
-                            goto case ConsoleKey.D1;
-                        }
-                        break;
+                    if (AfterGameMenu.AfterGameChoiceMenu())
+                    {
+                        goto case ConsoleKey.D2;
+                    }
+                    break;
 
-                    case ConsoleKey.D2:
-                        Board field = new Board(3, 3);
-                        Game match = new Game();
-                        match.Run(field, settings, scoreStorage, GameMode.FastGame);
+                case ConsoleKey.D3:
+                    scoreMenu.ScoreboardMenu(scoreStorage);
+                    break;
 
-                        if (AfterGameMenu.AfterGameChoiceMenu())
-                        {
-                            goto case ConsoleKey.D2;
-                        }
-                        break;
+                case ConsoleKey.D4:
+                    RulesStorage rulesStorage = new RulesStorage();
+                    RulesPrinter.ShowRules(rulesStorage.ReadRulesFromFile());
+                    break;
 
-                    case ConsoleKey.D3:
-                        scoreMenu.ScoreboardMenu(scoreStorage);
-                        break;
+                case ConsoleKey.D5:
+                    settingsMenu.SettingsGeneralMenu(settings, settingsStorage);
+                    break;
 
-                    case ConsoleKey.D4:
-                        RulesStorage rulesStorage = new RulesStorage();
-                        RulesPrinter.ShowRules(rulesStorage.ReadRulesFromFile());
-                        break;
+                case ConsoleKey.Escape:
+                    Console.Write("\nBYE!");
+                    break;
 
-                    case ConsoleKey.D5:
-                        settingsMenu.SettingsGeneralMenu(settings, settingsStorage);
-                        break;
-
-                    case ConsoleKey.Escape:
-                        Console.Write("\nBYE!");
-                        break;
-
-                    default:
-                        Console.Clear();
-                        Console.Beep();
-                        break;
-                }
-            } while (keyInfo.Key != ConsoleKey.Escape);
-        }
+                default:
+                    Console.Clear();
+                    Console.Beep();
+                    break;
+            }
+        } while (keyInfo.Key != ConsoleKey.Escape);
     }
 }

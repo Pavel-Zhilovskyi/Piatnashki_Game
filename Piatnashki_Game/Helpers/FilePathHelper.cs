@@ -1,16 +1,15 @@
-﻿namespace Piatnashki_Game
+﻿namespace Piatnashki_Game.Helpers;
+
+static class FilePathHelper
 {
-    static class FilePathHelper
+    static public string CreateFilePath(string baseDir, string folderName, string fileName)
     {
-        static public string CreateFilePath(string baseDir, string folderName, string fileName)
-        {
-            string folder = Path.Combine(baseDir, folderName);
+        string folder = Path.Combine(baseDir, folderName);
 
-            Directory.CreateDirectory(folder);
+        Directory.CreateDirectory(folder);
 
-            string filePath = Path.Combine(folder, fileName + ".txt");
+        string filePath = Path.Combine(folder, fileName + ".txt");
 
-            return filePath;
-        }
+        return filePath;
     }
 }
