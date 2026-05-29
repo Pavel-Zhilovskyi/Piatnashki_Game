@@ -1,30 +1,31 @@
-﻿namespace Piatnashki_Game
+﻿using PiatnashkiGame.Helpers;
+
+namespace PiatnashkiGame.Storages;
+
+internal class RulesStorage
 {
-    internal class RulesStorage
+    private string[] rules = [];
+
+    private readonly SafeFileHelper safeFileHelper = new SafeFileHelper();
+
+    private string filePath;
+
+
+    public RulesStorage()
     {
-        private string[] rules = [];
+        filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
+            "PiatnashkiGameRules", "Rules");
+    }
 
-        private readonly SafeFileHelper safeFileHelper = new SafeFileHelper();
-
-        private string filePath;
-    
-
-        public RulesStorage()
+    public string[] ReadRulesFromFile()
+    {
+        if (!safeFileHelper.IsExists(filePath))
         {
-            filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
-                "Piatnashki_Game_Rules", "Rules");
+            return Array.Empty<string>();
         }
 
-        public string[] ReadRulesFromFile()
-        {
-            if (!safeFileHelper.IsExists(filePath))
-            {
-                return Array.Empty<string>();
-            }
+        rules = safeFileHelper.ReadAllLines(filePath);
 
-            rules = safeFileHelper.ReadAllLines(filePath);
-
-            return rules;
-        }
+        return rules;
     }
 }

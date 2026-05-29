@@ -1,72 +1,73 @@
-﻿using Piatnashki_Game.Enums;
+﻿using PiatnashkiGame.Enums;
+using PiatnashkiGame.Points;
+using PiatnashkiGame.Helpers;
 
-namespace Piatnashki_Game
+namespace PiatnashkiGame.Storages;
+
+internal class ScoreStorage
 {
-    internal class ScoreStorage
+    private string filePath;
+
+    private readonly SafeFileHelper safeFileHelper = new SafeFileHelper();
+
+    public ScoreStorage()
     {
-        private string filePath;
+        filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
+            "PiatnashkiGameScore", "Score");
+    }
 
-        private readonly SafeFileHelper safeFileHelper = new SafeFileHelper();
+    private string ScoreToString(Score score)
+    {
+        return score.Name + ";" + score.Time.ToString(@"hh\:mm\:ss") + ";" + score.Mode.ToString();
+    }
 
-        public ScoreStorage()
+    public void WriteScoreFile(Score score)
+    {
+        safeFileHelper.Append(filePath, ScoreToString(score) + "\n");
+    }
+
+    public List<Score> ReadScoreFromFile()
+    {
+        if (!safeFileHelper.IsExists(filePath))
         {
-            filePath = FilePathHelper.CreateFilePath(AppDomain.CurrentDomain.BaseDirectory,
-                "Piatnashki_Game_Score", "Score");
+            return new List<Score>();
         }
 
-        private string ScoreToString(Score score)
-        {
-            return score.Name + ";" + score.Time.ToString(@"hh\:mm\:ss") + ";" + score.Mode.ToString();
-        }
+        List<Score> scores = new List<Score>();
 
-        public void WriteScoreFile(Score score)
-        {
-            safeFileHelper.Append(filePath, ScoreToString(score) + "\n");
-        }
+        string[] lines = safeFileHelper.ReadAllLines(filePath);
+        string[] parts;
 
-        public List<Score> ReadScoreFromFile()
+        Score score;
+
+        foreach(string line in lines) 
         {
-            if (!safeFileHelper.IsExists(filePath))
+            parts = line.Split(';');
+
+            if (parts.Length != 3)
             {
-                return new List<Score>();
+                continue;
+            } 
+            else if(!TimeSpan.TryParse(parts[1], out TimeSpan time))  
+            {
+                continue;
+            }
+            else if(!Enum.TryParse(parts[2], true, out GameMode mode))
+            {
+                continue;
+            }
+            else
+            {
+                score = new Score(parts[0], time, mode);
             }
 
-            List<Score> scores = new List<Score>();
-
-            string[] lines = safeFileHelper.ReadAllLines(filePath);
-            string[] parts;
-
-            Score score;
-
-            foreach(string line in lines) 
-            {
-                parts = line.Split(';');
-
-                if (parts.Length != 3)
-                {
-                    continue;
-                } 
-                else if(!TimeSpan.TryParse(parts[1], out TimeSpan time))  
-                {
-                    continue;
-                }
-                else if(!Enum.TryParse(parts[2], true, out GameMode mode))
-                {
-                    continue;
-                }
-                else
-                {
-                    score = new Score(parts[0], time, mode);
-                }
-
-                scores.Add(score);
-            }
-            return scores;
+            scores.Add(score);
         }
+        return scores;
+    }
 
-        public void ClearScoreboardFile()
-        {
-            safeFileHelper.Clear(filePath);
-        }
+    public void ClearScoreboardFile()
+    {
+        safeFileHelper.Clear(filePath);
     }
 }

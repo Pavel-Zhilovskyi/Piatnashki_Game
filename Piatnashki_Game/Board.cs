@@ -1,6 +1,6 @@
-﻿using Piatnashki_Game.Enums;
+﻿using PiatnashkiGame.Enums;
 
-namespace Piatnashki_Game;
+namespace PiatnashkiGame.Field;
 
 internal class Board
 {

@@ -1,42 +1,44 @@
-﻿namespace Piatnashki_Game
+﻿using PiatnashkiGame.Printers;
+using PiatnashkiGame.Storages;
+
+namespace PiatnashkiGame.Menues;
+
+internal class ScoreMenu
 {
-    internal class ScoreMenu
+    public void ScoreboardMenu(ScoreStorage scoreStorage)
     {
-        public void ScoreboardMenu(ScoreStorage scoreStorage)
+        ConsoleKeyInfo keyInfo;
+        Console.Clear();
+
+        do
         {
-            ConsoleKeyInfo keyInfo;
-            Console.Clear();
+            Console.WriteLine("1 - Show scoreboard");
+            Console.WriteLine("2 - Clear scoreboard");
+            Console.WriteLine("Esc - Quit scoreboard menu");
 
-            do
+            keyInfo = Console.ReadKey(true);
+
+            switch (keyInfo.Key)
             {
-                Console.WriteLine("1 - Show scoreboard");
-                Console.WriteLine("2 - Clear scoreboard");
-                Console.WriteLine("Esc - Quit scoreboard menu");
+                case ConsoleKey.D1:
+                    ScoreboardPrinter.ShowScoreboard(scoreStorage.ReadScoreFromFile());
+                    break;
 
-                keyInfo = Console.ReadKey(true);
+                case ConsoleKey.D2:
+                    Console.Clear();
+                    scoreStorage.ClearScoreboardFile();
+                    Console.WriteLine("You have successfully cleared the scoreboard!\n");
+                    break;
 
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.D1:
-                        ScoreboardPrinter.ShowScoreboard(scoreStorage.ReadScoreFromFile());
-                        break;
+                case ConsoleKey.Escape:
+                    Console.Clear();
+                    return;
 
-                    case ConsoleKey.D2:
-                        Console.Clear();
-                        scoreStorage.ClearScoreboardFile();
-                        Console.WriteLine("You have successfully cleared the scoreboard!\n");
-                        break;
-
-                    case ConsoleKey.Escape:
-                        Console.Clear();
-                        return;
-
-                    default:
-                        Console.Clear();
-                        Console.Beep();
-                        break;
-                }
-            } while (keyInfo.Key != ConsoleKey.Escape);
-        }
+                default:
+                    Console.Clear();
+                    Console.Beep();
+                    break;
+            }
+        } while (keyInfo.Key != ConsoleKey.Escape);
     }
 }
