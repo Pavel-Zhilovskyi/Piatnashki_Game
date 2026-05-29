@@ -1,41 +1,42 @@
-﻿namespace Piatnashki_Game;
-
-internal class ScoreMenu
+﻿namespace Piatnashki_Game
 {
-    public void ScoreboardMenu(ScoreStorage scoreStorage)
+    internal class ScoreMenu
     {
-        ConsoleKeyInfo keyInfo;
-        Console.Clear();
-
-        do
+        public void ScoreboardMenu(ScoreStorage scoreStorage)
         {
-            Console.WriteLine("1 - Show scoreboard");
-            Console.WriteLine("2 - Clear scoreboard");
-            Console.WriteLine("Esc - Quit scoreboard menu");
+            ConsoleKeyInfo keyInfo;
+            Console.Clear();
 
-            keyInfo = Console.ReadKey(true);
-
-            switch (keyInfo.Key)
+            do
             {
-                case ConsoleKey.D1:
-                    ScoreboardPrinter.ShowScoreboard(scoreStorage.ReadScoreFromFile());
-                    break;
+                Console.WriteLine("1 - Show scoreboard");
+                Console.WriteLine("2 - Clear scoreboard");
+                Console.WriteLine("Esc - Quit scoreboard menu");
 
-                case ConsoleKey.D2:
-                    Console.Clear();
-                    scoreStorage.ClearScoreboardFile();
-                    Console.WriteLine("You have successfully cleared the scoreboard!\n");
-                    break;
+                keyInfo = Console.ReadKey(true);
 
-                case ConsoleKey.Escape:
-                    Console.Clear();
-                    return;
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.D1:
+                        ScoreboardPrinter.ShowScoreboard(scoreStorage.ReadScoreFromFile());
+                        break;
 
-                default:
-                    Console.Clear();
-                    Console.Beep();
-                    break;
-            }
-        } while (keyInfo.Key != ConsoleKey.Escape);
+                    case ConsoleKey.D2:
+                        Console.Clear();
+                        scoreStorage.ClearScoreboardFile();
+                        Console.WriteLine("You have successfully cleared the scoreboard!\n");
+                        break;
+
+                    case ConsoleKey.Escape:
+                        Console.Clear();
+                        return;
+
+                    default:
+                        Console.Clear();
+                        Console.Beep();
+                        break;
+                }
+            } while (keyInfo.Key != ConsoleKey.Escape);
+        }
     }
 }

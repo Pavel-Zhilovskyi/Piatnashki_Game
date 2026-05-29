@@ -1,31 +1,32 @@
-﻿namespace Piatnashki_Game;
-
-static class BoardPrinter
+﻿namespace Piatnashki_Game
 {
-    public static void ShowBoard(Board board)
+    static class BoardPrinter
     {
-        Console.WriteLine();
-        for (int i = 0; i < board.Rows; i++)
+        public static void ShowBoard(Board board)
         {
-            for (int j = 0; j < board.Cols; j++)
+            Console.WriteLine();
+            for (int i = 0; i < board.Rows; i++)
             {
-                int value = board.GetValue(i, j);
+                for (int j = 0; j < board.Cols; j++)
+                {
+                    int value = board.GetValue(i, j);
 
-                if (value > 0 && value < 10)
-                {
-                    Console.Write(value + "  ");
+                    if (value > 0 && value < 10)
+                    {
+                        Console.Write(value + "  ");
+                    }
+                    else if (value == 0)
+                    {
+                        Console.Write("_" + "  ");
+                    }
+                    else
+                    {
+                        Console.Write(value + " ");
+                    }
                 }
-                else if (value == 0)
-                {
-                    Console.Write("_" + "  ");
-                }
-                else
-                {
-                    Console.Write(value + " ");
-                }
+                Console.WriteLine();
             }
             Console.WriteLine();
         }
-        Console.WriteLine();
     }
 }

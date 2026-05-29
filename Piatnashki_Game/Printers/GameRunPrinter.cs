@@ -1,15 +1,16 @@
-﻿namespace Piatnashki_Game;
-
-static class GamePrinter
+﻿namespace Piatnashki_Game
 {
-    public static void DrawGameScreen(TimeSpan timeLeft, Board board, Settings settings, int movesCount)
+    static class GamePrinter
     {
-        Console.Clear();
-        Console.WriteLine("Time left: " + timeLeft.ToString(@"hh\:mm\:ss"));
-        Console.WriteLine("Moves: " + movesCount);
-        BoardPrinter.ShowBoard(board);
+        public static void DrawGameScreen(TimeSpan timeLeft, Board board, Settings settings, int movesCount)
+        {
+            Console.Clear();
+            Console.WriteLine("Time left: " + timeLeft.ToString(@"hh\:mm\:ss"));
+            Console.WriteLine("Moves: " + movesCount);
+            BoardPrinter.ShowBoard(board);
 
-        Console.WriteLine($"Use {settings.KeyControls} to move the empty tile.");
-        Console.WriteLine("Q - Give up.");
+            Console.WriteLine($"Use {settings.KeyControls} to move the empty tile.");
+            Console.WriteLine("Q - Give up.");
+        }
     }
 }
